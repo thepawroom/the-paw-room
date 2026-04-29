@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Paw Room | Pet Boarding, Daycare & Grooming in Puchong</title>
+  <meta name="description" content="The Paw Room provides professional pet boarding, daycare and grooming services in Bandar Kinrara, Puchong." />
+
+  <style>
+    :root {
+      --black: #050505;
+      --dark: #111111;
+      --white: #ffffff;
+      --offwhite: #f4f1ec;
+      --grey: #8f8f8f;
+      --line: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      width: 100%;
+      padding: 26px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 5, 5, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .brand {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--grey);
+      margin-top: 2px;
+      font-weight: 400;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--grey);
+      margin-left: 28px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      min-height: 88vh;
+      padding: 90px 8%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--grey);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 6vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      max-width: 850px;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      max-width: 620px;
+      font-size: 18px;
+      margin-bottom: 34px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 15px 24px;
+      border: 1px solid var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--white);
+    }
+
+    .btn:hover {
+      opacity: 0.75;
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      padding: 38px;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
+    }
+
+    .hero-panel .mark {
+      font-size: 76px;
+      line-height: 1;
+      letter-spacing: -4px;
+    }
+
+    .hero-panel p {
+      color: var(--grey);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    section {
+      padding: 82px 8%;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 42px;
+      align-items: end;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      color: var(--grey);
+      max-width: 480px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .service-card {
+      padding: 34px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 260px;
+      background: #080808;
+    }
+
+    .service-card .number {
+      color: var(--grey);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 38px;
+    }
+
+    .service-card h3 {
+      font-size: 26px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .service-card p {
+      color: var(--grey);
+      font-size: 15px;
+    }
+
+    .booking {
+      background: var(--offwhite);
+      color: var(--black);
+    }
+
+    .booking .section-head p {
+      color: #555;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .booking-box,
+    .policy-box {
+      border: 1px solid #d6d0c6;
+      padding: 34px;
+      background: #fff;
+    }
+
+    .booking-box h3,
+    .policy-box h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .deposit-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e0d8;
+      color: #222;
+    }
+
+    .deposit-row:last-child {
+      border-bottom: none;
+    }
+
+    .deposit-row span:last-child {
+      font-weight: 700;
+    }
+
+    .policy-box p {
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .black-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      padding: 15px 24px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .info-card {
+      background: #080808;
+      padding: 32px;
+      min-height: 210px;
+    }
+
+    .info-card h3 {
+      font-size: 22px;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .info-card p {
+      color: var(--grey);
+      font-size: 15px;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-card {
+      border: 1px solid var(--line);
+      padding: 36px;
+      background: #080808;
+    }
+
+    .contact-card p {
+      color: var(--grey);
+      margin-bottom: 14px;
+    }
+
+    .contact-card strong {
+      color: var(--white);
+    }
+
+    footer {
+      padding: 38px 8%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--grey);
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 18px;
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+
+      .hero,
+      .booking-layout,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 18px;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+
+      .hero-panel {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      The Paw Room
+      <span>Pet Boarding & Grooming</span>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#booking">Booking</a>
+      <a href="#policy">Policy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Bandar Kinrara · Puchong</div>
+
+        <h1>Professional care for pets, with structure and calm.</h1>
+
+        <p>
+          The Paw Room provides pet boarding, daycare and grooming services in a clean,
+          controlled and reliable environment.
+          <br /><br />
+          The Paw Room 提供专业宠物寄养、日托与美容服务，位于 Bandar Kinrara, Puchong。
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="#booking">Make a Booking</a>
+          <a class="btn secondary" href="https://wa.me/60163522880" target="_blank">WhatsApp Us</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div>
+          <div class="eyebrow">Pet Boarding · Daycare · Grooming</div>
+          <div class="mark">TPR</div>
+        </div>
+
+        <p>
+          Limited daily slots. Advance booking and deposit are required to secure your pet’s appointment.
+          <br /><br />
+          每日名额有限。预约需支付定金，以保留服务时间与空间。
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-head">
+        <h2>Services<br />服务项目</h2>
+        <p>
+          Practical pet care services designed for owners who want a professional,
+          reliable and straightforward experience.
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="number">01</div>
+          <h3>Pet Boarding<br />宠物寄养</h3>
+          <p>
+            Overnight care for pets while owners are travelling, working or away from home.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="number">02</div>
+          <h3>Pet Daycare<br />宠物日托</h3>
+          <p>
+            Daytime supervision for pets who need company, structure and a safe space.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="number">03</div>
+          <h3>Pet Grooming<br />宠物美容</h3>
+          <p>
+            Bathing, hygiene care and grooming support to keep pets clean and well maintained.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div class="section-head">
+        <h2>Booking<br />预约</h2>
+        <p>
+          A deposit is required for all bookings. This allows us to reserve the required
+          time, space and manpower for your pet.
+        </p>
+      </div>
+
+      <div class="booking-layout">
+        <div class="booking-box">
+          <h3>Deposit / 定金</h3>
+
+          <div class="deposit-row">
+            <span>Pet Boarding / 宠物寄养</span>
+            <span>RM50</span>
+          </div>
+
+          <div class="deposit-row">
+            <span>Pet Daycare / 宠物日托</span>
+            <span>RM20</span>
+          </div>
+
+          <div class="deposit-row">
+            <span>Pet Grooming / 宠物美容</span>
+            <span>RM30</span>
+          </div>
+        </div>
+
+        <div class="policy-box">
+          <h3>Booking Confirmation / 预约确认</h3>
+
+          <p>
+            Deposit payment does not mean the booking is automatically confirmed.
+            Your booking will be confirmed after The Paw Room checks availability.
+          </p>
+
+          <p>
+            完成定金付款并不代表预约自动确认。The Paw Room 会在确认档期后正式确认预约。
+          </p>
+
+          <a
+            class="black-btn"
+            href="https://wa.me/60163522880?text=Hi%20The%20Paw%20Room%2C%20I%20would%20like%20to%20make%20a%20booking."
+            target="_blank"
+          >
+            Book via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="policy">
+      <div class="section-head">
+        <h2>Policy<br />预约政策</h2>
+        <p>
+          Clear booking rules help us protect confirmed slots and maintain service quality.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Deposit Required</h3>
+          <p>
+            All boarding, daycare and grooming bookings require a deposit before a slot can be reserved.
+            <br /><br />
+            所有预约需先支付定金。
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Limited Daily Slots</h3>
+          <p>
+            We accept a limited number of pets per day to ensure proper care and attention.
+            <br /><br />
+            每日接待名额有限，以确保照顾品质。
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Rescheduling</h3>
+          <p>
+            One-time rescheduling may be allowed with early notice, subject to availability.
+            <br /><br />
+            如需改期，请提前通知，并视档期安排。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>Visit or contact<br />The Paw Room</h2>
+        </div>
+
+        <div class="contact-card">
+          <p><strong>WhatsApp:</strong> 016-3522880</p>
+          <p><strong>Location:</strong> Bandar Kinrara, Puchong</p>
+          <p><strong>Services:</strong> Pet Boarding · Pet Daycare · Pet Grooming</p>
+
+          <a class="btn primary" href="https://wa.me/60163522880" target="_blank">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>The Paw Room</strong>
+    <span>Pet Boarding · Daycare · Grooming · Bandar Kinrara, Puchong</span>
+  </footer>
+</body>
+</html>
