@@ -35,15 +35,9 @@
       line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
     header {
       width: 100%;
-      padding: 22px 8%;
+      padding: 26px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -54,10 +48,20 @@
       z-index: 10;
     }
 
-    .brand-logo {
-      width: 150px;
-      background: var(--offwhite);
-      padding: 8px;
+    .brand-text {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--grey);
+      margin-top: 2px;
+      font-weight: 400;
     }
 
     nav a {
@@ -148,11 +152,28 @@
       background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
     }
 
-    .hero-logo-box {
-      background: var(--offwhite);
-      padding: 26px;
-      max-width: 330px;
+    .hero-panel-title {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -1px;
       margin-top: 24px;
+    }
+
+    .hero-panel-list {
+      margin-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hero-panel-list div {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      color: #d8d8d8;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .hero-panel p {
@@ -354,10 +375,6 @@
         flex-wrap: wrap;
       }
 
-      .brand-logo {
-        width: 135px;
-      }
-
       nav {
         width: 100%;
       }
@@ -395,19 +412,16 @@
       .hero-panel {
         min-height: 320px;
       }
-
-      .hero-logo-box {
-        max-width: 260px;
-      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <a href="#" class="brand-logo" aria-label="The Paw Room Home">
-      <img src="logo-light.jpg" alt="The Paw Room Logo" />
-    </a>
+    <div class="brand-text">
+      The Paw Room
+      <span>Pet Boarding & Grooming</span>
+    </div>
 
     <nav>
       <a href="#services">Services</a>
@@ -441,13 +455,30 @@
         <div>
           <div class="eyebrow">Pet Boarding · Daycare · Grooming</div>
 
-          <div class="hero-logo-box">
-            <img src="logo-light.jpg" alt="The Paw Room Logo" />
+          <div class="hero-panel-title">
+            Clean space.<br />
+            Limited slots.<br />
+            Structured care.
+          </div>
+
+          <div class="hero-panel-list">
+            <div>
+              <span>Boarding</span>
+              <span>RM50 Deposit</span>
+            </div>
+            <div>
+              <span>Daycare</span>
+              <span>RM20 Deposit</span>
+            </div>
+            <div>
+              <span>Grooming</span>
+              <span>RM30 Deposit</span>
+            </div>
           </div>
         </div>
 
         <p>
-          Limited daily slots. Advance booking and deposit are required to secure your pet’s appointment.
+          Advance booking and deposit are required to secure your pet’s appointment.
           <br /><br />
           每日名额有限。预约需支付定金，以保留服务时间与空间。
         </p>
