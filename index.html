@@ -15,6 +15,7 @@
       --offwhite: #f4f1ec;
       --grey: #9a9a9a;
       --line: #2a2a2a;
+      --cream-line: #d6d0c6;
     }
 
     * {
@@ -34,9 +35,15 @@
       line-height: 1.6;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
     header {
       width: 100%;
-      padding: 26px 8%;
+      padding: 22px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -47,11 +54,11 @@
       z-index: 10;
     }
 
-    .brand-logo img {
-  width: 170px;
-  height: auto;
-  display: block;
-}
+    .brand-logo {
+      width: 150px;
+      background: var(--offwhite);
+      padding: 8px;
+    }
 
     nav a {
       text-decoration: none;
@@ -141,10 +148,11 @@
       background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
     }
 
-    .hero-panel .mark {
-      font-size: 76px;
-      line-height: 1;
-      letter-spacing: -4px;
+    .hero-logo-box {
+      background: var(--offwhite);
+      padding: 26px;
+      max-width: 330px;
+      margin-top: 24px;
     }
 
     .hero-panel p {
@@ -229,7 +237,7 @@
 
     .booking-box,
     .policy-box {
-      border: 1px solid #d6d0c6;
+      border: 1px solid var(--cream-line);
       padding: 34px;
       background: #fff;
     }
@@ -346,6 +354,10 @@
         flex-wrap: wrap;
       }
 
+      .brand-logo {
+        width: 135px;
+      }
+
       nav {
         width: 100%;
       }
@@ -381,7 +393,11 @@
       }
 
       .hero-panel {
-        min-height: 300px;
+        min-height: 320px;
+      }
+
+      .hero-logo-box {
+        max-width: 260px;
       }
     }
   </style>
@@ -389,9 +405,9 @@
 
 <body>
   <header>
-   <div class="brand-logo">
-  <img src="logo-light.jpg" alt="The Paw Room Logo" />
-</div>
+    <a href="#" class="brand-logo" aria-label="The Paw Room Home">
+      <img src="logo-light.jpg" alt="The Paw Room Logo" />
+    </a>
 
     <nav>
       <a href="#services">Services</a>
@@ -424,7 +440,10 @@
       <div class="hero-panel">
         <div>
           <div class="eyebrow">Pet Boarding · Daycare · Grooming</div>
-          <div class="mark">TPR</div>
+
+          <div class="hero-logo-box">
+            <img src="logo-light.jpg" alt="The Paw Room Logo" />
+          </div>
         </div>
 
         <p>
