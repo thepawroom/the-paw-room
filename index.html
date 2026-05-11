@@ -272,7 +272,7 @@
 
     .pricing-layout {
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 28px;
     }
 
@@ -628,10 +628,10 @@
 
     <section class="pricing" id="pricing">
       <div class="section-head">
-        <h2>Boarding Pricing<br />寄养价格</h2>
+        <h2>Pricing<br />服务价格</h2>
         <p>
-          Pricing is based on your pet’s weight to ensure fair space, care and cleaning arrangement.
-          按体重收费，是为了公平安排空间、照顾时间与清洁工作。
+          Pricing is based on pet weight, size and care requirements.
+          价格会根据狗狗体重、体型与照顾需求安排。
         </p>
       </div>
 
@@ -645,8 +645,12 @@
           </div>
 
           <p>
-            Final rate depends on pet weight, size and care requirements.
-            最终价格会根据狗狗体重、体型与照顾需求确认。
+            Boarding pricing is based on your pet’s weight to ensure fair space,
+            care and cleaning arrangement.
+          </p>
+
+          <p>
+            寄养价格按狗狗体重计算，以公平安排空间、照顾时间与清洁工作。
           </p>
 
           <table class="price-table">
@@ -686,6 +690,61 @@
           </table>
         </div>
 
+        <div class="pricing-card">
+          <span class="tag">Pet Daycare</span>
+
+          <div class="price-lead">
+            From RM5 / hour
+            <span>宠物日托 RM5 / 小时起</span>
+          </div>
+
+          <p>
+            Daycare is charged hourly and based on your pet’s weight.
+          </p>
+
+          <p>
+            日托按小时收费，价格根据狗狗体重计算。
+          </p>
+
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th>Pet Weight</th>
+                <th>Rate / Hour</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>1–9kg</td>
+                <td>RM5 / hour</td>
+              </tr>
+              <tr>
+                <td>10–19kg</td>
+                <td>RM6 / hour</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top: 22px;">
+            Check-in starts from 9:30am. Latest check-out time is 8:00pm.
+            Daycare is capped at 9 hours.
+          </p>
+
+          <p>
+            日托 check-in 时间为早上 9:30 起，最迟 check-out 时间为晚上 8:00。
+            日托最多 9 小时。
+          </p>
+
+          <p>
+            Any stay above 9 hours will be charged as Pet Boarding / daily rate.
+          </p>
+
+          <p>
+            超过 9 小时将按宠物寄养 / 每日费用计算。
+          </p>
+        </div>
+
         <div class="pricing-note">
           <span class="tag">Important Note</span>
 
@@ -700,13 +759,29 @@
             15kg 以上狗狗因需使用较大空间，名额有限。请先提交预约申请，
             我们会确认档期、房间安排与狗狗情况后，再正式确认预约。
           </p>
+        </div>
+
+        <div class="pricing-note">
+          <span class="tag">Deposit Policy</span>
+
+          <h3>Boarding deposit only</h3>
 
           <p>
-            For pets above 44kg, please contact us first to confirm whether suitable space is available.
+            Pet Boarding requires a RM50 deposit to reserve the slot.
+            If the boarding booking is cancelled, the deposit is non-refundable.
           </p>
 
           <p>
-            44kg 以上的狗狗，请先联系我们确认是否有合适空间与档期。
+            宠物寄养需要支付 RM50 定金以保留位置。如取消寄养预约，定金将不予退还。
+          </p>
+
+          <p>
+            Full payment is required upon check-in.
+            Daycare and Grooming do not require deposit.
+          </p>
+
+          <p>
+            Check-in 时需支付全额费用。宠物日托与宠物美容不需要支付定金。
           </p>
         </div>
       </div>
@@ -717,32 +792,42 @@
         <h2>Booking Request<br />预约申请</h2>
         <p>
           All bookings are subject to availability. Please submit the booking request form first.
-          We will contact you to confirm availability, pricing and deposit payment.
+          We will contact you to confirm availability, pricing and payment arrangement.
         </p>
       </div>
 
       <div class="booking-layout">
         <div class="booking-box">
-          <h3>Deposit / 定金</h3>
+          <h3>Payment Summary / 付款说明</h3>
 
           <div class="deposit-row">
-            <span>Pet Boarding / 宠物寄养</span>
+            <span>Pet Boarding Deposit / 寄养定金</span>
             <span>RM50</span>
           </div>
 
           <div class="deposit-row">
-            <span>Pet Daycare / 宠物日托</span>
-            <span>RM20</span>
+            <span>Pet Daycare Deposit / 日托定金</span>
+            <span>Not required</span>
           </div>
 
           <div class="deposit-row">
-            <span>Pet Grooming / 宠物美容</span>
-            <span>RM30</span>
+            <span>Pet Grooming Deposit / 美容定金</span>
+            <span>Not required</span>
           </div>
 
           <p style="margin-top: 20px;">
-            Deposit is required only after availability is confirmed by The Paw Room.
-            定金将在 The Paw Room 确认档期后才需要支付。
+            Boarding deposit is required only after availability is confirmed by The Paw Room.
+            如取消寄养预约，定金将不予退还。
+          </p>
+
+          <p>
+            For daycare, check-in starts from 9:30am and latest check-out is 8:00pm.
+            Daycare is capped at 9 hours. Any stay above 9 hours will be charged as boarding.
+          </p>
+
+          <p>
+            日托 check-in 时间为早上 9:30 起，最迟 check-out 时间为晚上 8:00。
+            日托最多 9 小时，超过 9 小时将按寄养费用计算。
           </p>
         </div>
 
@@ -761,8 +846,8 @@
             </div>
 
             <div class="step">
-              <strong>3. Deposit payment</strong>
-              Once availability is confirmed, deposit payment will be arranged.
+              <strong>3. Deposit arrangement</strong>
+              Boarding deposit is arranged after availability is confirmed.
             </div>
 
             <div class="step">
