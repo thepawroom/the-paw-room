@@ -114,6 +114,10 @@
       letter-spacing: -1px;
     }
 
+    h3 {
+      font-weight: 500;
+    }
+
     .hero {
       min-height: 88vh;
       padding: 80px 8%;
@@ -165,7 +169,8 @@
       color: var(--white);
     }
 
-    .btn:hover {
+    .btn:hover,
+    .black-btn:hover {
       opacity: 0.75;
     }
 
@@ -179,7 +184,7 @@
 
     .section-head p {
       color: var(--grey);
-      max-width: 500px;
+      max-width: 520px;
     }
 
     .service-grid {
@@ -208,7 +213,6 @@
       font-size: 26px;
       line-height: 1.15;
       margin-bottom: 16px;
-      font-weight: 500;
     }
 
     .service-card p {
@@ -261,6 +265,82 @@
       background: #ddd;
     }
 
+    .pricing {
+      background: #080808;
+      color: var(--white);
+    }
+
+    .pricing-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .pricing-card,
+    .pricing-note {
+      border: 1px solid var(--line);
+      padding: 34px;
+      background: #0b0b0b;
+    }
+
+    .pricing-card h3,
+    .pricing-note h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .price-lead {
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .price-lead span {
+      display: block;
+      color: var(--grey);
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    .pricing-card p,
+    .pricing-note p {
+      color: var(--grey);
+      margin-bottom: 18px;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      color: #e7e7e7;
+      font-size: 15px;
+    }
+
+    .price-table th,
+    .price-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+      text-align: left;
+    }
+
+    .price-table td:last-child,
+    .price-table th:last-child {
+      text-align: right;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      color: var(--grey);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
     .booking {
       background: var(--offwhite);
       color: var(--black);
@@ -287,7 +367,6 @@
     .policy-box h3 {
       font-size: 24px;
       margin-bottom: 20px;
-      font-weight: 500;
     }
 
     .deposit-row {
@@ -308,7 +387,8 @@
       white-space: nowrap;
     }
 
-    .policy-box p {
+    .policy-box p,
+    .booking-box p {
       color: #555;
       margin-bottom: 18px;
     }
@@ -323,6 +403,22 @@
       text-transform: uppercase;
       letter-spacing: 1.5px;
       font-size: 12px;
+      transition: 0.2s ease;
+    }
+
+    .steps {
+      margin-top: 24px;
+      border-top: 1px solid #e5e0d8;
+    }
+
+    .step {
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e0d8;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
     }
 
     .contact {
@@ -383,6 +479,7 @@
 
       .hero,
       .photo-grid,
+      .pricing-layout,
       .booking-layout,
       .contact {
         grid-template-columns: 1fr;
@@ -424,6 +521,7 @@
     <nav>
       <a href="#services">Services</a>
       <a href="#space">Our Space</a>
+      <a href="#pricing">Pricing</a>
       <a href="#booking">Booking</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -444,7 +542,7 @@
         </p>
 
         <div class="actions">
-          <a class="btn primary" href="#booking">Make a Booking</a>
+          <a class="btn primary" href="#booking">Submit Booking Request</a>
           <a class="btn secondary" href="https://wa.me/60163522880" target="_blank">WhatsApp Us</a>
         </div>
       </div>
@@ -528,12 +626,98 @@
       </div>
     </section>
 
+    <section class="pricing" id="pricing">
+      <div class="section-head">
+        <h2>Boarding Pricing<br />寄养价格</h2>
+        <p>
+          Pricing is based on your pet’s weight to ensure fair space, care and cleaning arrangement.
+          按体重收费，是为了公平安排空间、照顾时间与清洁工作。
+        </p>
+      </div>
+
+      <div class="pricing-layout">
+        <div class="pricing-card">
+          <span class="tag">Pet Boarding</span>
+
+          <div class="price-lead">
+            From RM50 / night
+            <span>宠物寄养 RM50 / 晚起</span>
+          </div>
+
+          <p>
+            Final rate depends on pet weight, size and care requirements.
+            最终价格会根据狗狗体重、体型与照顾需求确认。
+          </p>
+
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th>Pet Weight</th>
+                <th>Rate / Night</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>1–4kg</td>
+                <td>RM50</td>
+              </tr>
+              <tr>
+                <td>5–9kg</td>
+                <td>RM55</td>
+              </tr>
+              <tr>
+                <td>10–14kg</td>
+                <td>RM60</td>
+              </tr>
+              <tr>
+                <td>15–24kg</td>
+                <td>RM65–RM70</td>
+              </tr>
+              <tr>
+                <td>25–34kg</td>
+                <td>RM75–RM80</td>
+              </tr>
+              <tr>
+                <td>35–44kg</td>
+                <td>RM85–RM90</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pricing-note">
+          <span class="tag">Important Note</span>
+
+          <h3>Limited large-room availability</h3>
+
+          <p>
+            Pets above 15kg require availability confirmation before booking is accepted,
+            as limited large-room space is available.
+          </p>
+
+          <p>
+            15kg 以上狗狗因需使用较大空间，名额有限。请先提交预约申请，
+            我们会确认档期、房间安排与狗狗情况后，再正式确认预约。
+          </p>
+
+          <p>
+            For pets above 44kg, please contact us first to confirm whether suitable space is available.
+          </p>
+
+          <p>
+            44kg 以上的狗狗，请先联系我们确认是否有合适空间与档期。
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="booking" id="booking">
       <div class="section-head">
-        <h2>Booking<br />预约</h2>
+        <h2>Booking Request<br />预约申请</h2>
         <p>
-          A deposit is required for all bookings. This allows us to reserve the required
-          time, space and manpower for your pet.
+          All bookings are subject to availability. Please submit the booking request form first.
+          We will contact you to confirm availability, pricing and deposit payment.
         </p>
       </div>
 
@@ -555,26 +739,48 @@
             <span>Pet Grooming / 宠物美容</span>
             <span>RM30</span>
           </div>
+
+          <p style="margin-top: 20px;">
+            Deposit is required only after availability is confirmed by The Paw Room.
+            定金将在 The Paw Room 确认档期后才需要支付。
+          </p>
         </div>
 
         <div class="policy-box">
-          <h3>Booking Confirmation / 预约确认</h3>
+          <h3>How Booking Works / 预约流程</h3>
 
-          <p>
-            Deposit payment does not mean the booking is automatically confirmed.
-            Your booking will be confirmed after The Paw Room checks availability.
-          </p>
+          <div class="steps">
+            <div class="step">
+              <strong>1. Submit booking request</strong>
+              Fill in owner details, pet details, check-in date and check-out date.
+            </div>
 
-          <p>
-            完成定金付款并不代表预约自动确认。The Paw Room 会在确认档期后正式确认预约。
+            <div class="step">
+              <strong>2. Availability confirmation</strong>
+              We will check space, room arrangement and pet suitability.
+            </div>
+
+            <div class="step">
+              <strong>3. Deposit payment</strong>
+              Once availability is confirmed, deposit payment will be arranged.
+            </div>
+
+            <div class="step">
+              <strong>4. Booking confirmed</strong>
+              Your booking is confirmed only after confirmation from The Paw Room.
+            </div>
+          </div>
+
+          <p style="margin-top: 22px;">
+            提交表格后不代表预约已自动确认。我们会先确认档期、空间与狗狗情况。
           </p>
 
           <a
             class="black-btn"
-            href="https://wa.me/60163522880?text=Hi%20The%20Paw%20Room%2C%20I%20would%20like%20to%20make%20a%20booking."
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdN3-L1yB_PedrJH3CvGJXttJ_KFwZRW76-xl2OXmUL3lZp9w/viewform?usp=header"
             target="_blank"
           >
-            Book via WhatsApp
+            Submit Booking Form
           </a>
         </div>
       </div>
