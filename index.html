@@ -342,12 +342,14 @@
       margin-bottom: 20px;
     }
 
-    .booking {
+    .booking,
+    .terms {
       background: var(--offwhite);
       color: var(--black);
     }
 
-    .booking .section-head p {
+    .booking .section-head p,
+    .terms .section-head p {
       color: #555;
     }
 
@@ -358,14 +360,16 @@
     }
 
     .booking-box,
-    .policy-box {
+    .policy-box,
+    .terms-box {
       border: 1px solid var(--soft-line);
       padding: 34px;
       background: #fff;
     }
 
     .booking-box h3,
-    .policy-box h3 {
+    .policy-box h3,
+    .terms-box h3 {
       font-size: 24px;
       margin-bottom: 20px;
     }
@@ -389,7 +393,8 @@
     }
 
     .policy-box p,
-    .booking-box p {
+    .booking-box p,
+    .terms-box p {
       color: #555;
       margin-bottom: 18px;
     }
@@ -420,6 +425,41 @@
     .step strong {
       display: block;
       margin-bottom: 4px;
+    }
+
+    .terms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .terms-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      color: #555;
+    }
+
+    .terms-list li {
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .terms-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #111;
+      font-weight: 700;
+    }
+
+    .warning-box {
+      margin-top: 28px;
+      border: 1px solid #111;
+      padding: 22px;
+      background: #f8f5ef;
+      color: #222;
+      font-weight: 600;
     }
 
     .contact {
@@ -482,6 +522,7 @@
       .photo-grid,
       .pricing-layout,
       .booking-layout,
+      .terms-grid,
       .contact {
         grid-template-columns: 1fr;
       }
@@ -524,6 +565,7 @@
       <a href="#space">Our Space</a>
       <a href="#pricing">Pricing</a>
       <a href="#booking">Booking</a>
+      <a href="#terms">Terms</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -869,6 +911,52 @@
             Submit Booking Form
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="terms" id="terms">
+      <div class="section-head">
+        <h2>Booking Terms<br />Boarding Requirements</h2>
+        <p>
+          To keep every pet safe, comfortable and properly cared for, all pets must meet
+          the following requirements before boarding or daycare is accepted.
+        </p>
+      </div>
+
+      <div class="terms-grid">
+        <div class="terms-box">
+          <span class="tag">Requirements</span>
+          <h3>Health & safety requirements</h3>
+
+          <ul class="terms-list">
+            <li>Dogs must have completed their required vaccinations.</li>
+            <li>Dogs must be free from skin disease.</li>
+            <li>Dogs must be free from fleas and ticks.</li>
+            <li>Dogs must be free from contagious health conditions.</li>
+            <li>Dogs with aggressive behaviour, frequent barking, or a history of biting people or dogs may not be accepted.</li>
+            <li>Owners are required to provide the dog’s daily food and personal items.</li>
+            <li>Female dogs in heat must wear diapers, provided by the owner.</li>
+          </ul>
+        </div>
+
+        <div class="terms-box">
+          <span class="tag">Owner Responsibility</span>
+          <h3>Disclosure & special care</h3>
+
+          <ul class="terms-list">
+            <li>If your dog requires special attention, including food allergies, health conditions or behavioural habits, the owner must inform The Paw Room in advance.</li>
+            <li>This allows us to record the information properly and provide suitable care.</li>
+            <li>If the owner fails to disclose important information and the dog becomes injured, unwell or unsuitable for boarding, the related responsibility will be borne by the owner.</li>
+            <li>If a dog shows aggressive or severe stress-related behaviour during boarding, The Paw Room will contact the owner and may require early pick-up.</li>
+            <li>Fees paid for the affected booking period are non-refundable if early pick-up is required due to safety or behaviour concerns.</li>
+            <li>If a dog becomes unwell during boarding or daycare, The Paw Room will contact the owner immediately. In serious cases, the dog may be sent to a veterinary clinic, and all related costs will be borne by the owner.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="warning-box">
+        The Paw Room reserves the right to decline any pet that does not meet boarding requirements
+        or may present a safety risk, without further explanation.
       </div>
     </section>
 
