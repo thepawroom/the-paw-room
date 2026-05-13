@@ -20,15 +20,8 @@
       --soft-line: #d8d2c8;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -37,12 +30,10 @@
       line-height: 1.6;
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
+    body[data-lang="en"] .zh { display: none !important; }
+    body[data-lang="zh"] .en { display: none !important; }
+
+    img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
     header {
       width: 100%;
@@ -74,23 +65,50 @@
       font-weight: 400;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
     nav a {
       text-decoration: none;
       color: var(--grey);
-      margin-left: 28px;
       font-size: 13px;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    nav a:hover {
-      color: var(--white);
+    nav a:hover { color: var(--white); }
+
+    .language-switch {
+      display: flex;
+      gap: 8px;
+      margin-left: 4px;
     }
 
-    section {
-      padding: 82px 8%;
-      border-bottom: 1px solid var(--line);
+    .language-switch button {
+      background: transparent;
+      color: var(--grey);
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
+
+    .language-switch button:hover,
+    body[data-lang="en"] .language-switch button[data-switch="en"],
+    body[data-lang="zh"] .language-switch button[data-switch="zh"] {
+      color: var(--black);
+      background: var(--white);
+      border-color: var(--white);
+    }
+
+    section { padding: 82px 8%; border-bottom: 1px solid var(--line); }
 
     .eyebrow {
       color: var(--grey);
@@ -115,9 +133,7 @@
       letter-spacing: -1px;
     }
 
-    h3 {
-      font-weight: 500;
-    }
+    h3 { font-weight: 500; }
 
     .hero {
       min-height: 88vh;
@@ -160,20 +176,9 @@
       transition: 0.2s ease;
     }
 
-    .btn.primary {
-      background: var(--white);
-      color: var(--black);
-    }
-
-    .btn.secondary {
-      background: transparent;
-      color: var(--white);
-    }
-
-    .btn:hover,
-    .black-btn:hover {
-      opacity: 0.75;
-    }
+    .btn.primary { background: var(--white); color: var(--black); }
+    .btn.secondary { background: transparent; color: var(--white); }
+    .btn:hover, .black-btn:hover { opacity: 0.75; }
 
     .section-head {
       display: flex;
@@ -221,14 +226,8 @@
       font-size: 15px;
     }
 
-    .photo-section {
-      background: var(--offwhite);
-      color: var(--black);
-    }
-
-    .photo-section .section-head p {
-      color: #555;
-    }
+    .photo-section { background: var(--offwhite); color: var(--black); }
+    .photo-section .section-head p { color: #555; }
 
     .photo-grid {
       display: grid;
@@ -236,22 +235,9 @@
       gap: 18px;
     }
 
-    .photo-large {
-      height: 520px;
-      overflow: hidden;
-      background: #ddd;
-    }
-
-    .photo-stack {
-      display: grid;
-      gap: 18px;
-    }
-
-    .photo-small {
-      height: 251px;
-      overflow: hidden;
-      background: #ddd;
-    }
+    .photo-large { height: 520px; overflow: hidden; background: #ddd; }
+    .photo-stack { display: grid; gap: 18px; }
+    .photo-small { height: 251px; overflow: hidden; background: #ddd; }
 
     .gallery-grid {
       display: grid;
@@ -260,16 +246,9 @@
       margin-top: 18px;
     }
 
-    .gallery-item {
-      height: 260px;
-      overflow: hidden;
-      background: #ddd;
-    }
+    .gallery-item { height: 260px; overflow: hidden; background: #ddd; }
 
-    .pricing {
-      background: #080808;
-      color: var(--white);
-    }
+    .pricing { background: #080808; color: var(--white); }
 
     .pricing-layout {
       display: grid;
@@ -310,6 +289,19 @@
       color: var(--grey);
       margin-bottom: 18px;
     }
+
+    .boarding-policy {
+      margin-top: 22px;
+      margin-bottom: 24px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #101010;
+      color: #d8d2c8;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .boarding-policy strong { color: #ffffff; }
 
     .price-table {
       width: 100%;
@@ -383,9 +375,7 @@
       gap: 20px;
     }
 
-    .deposit-row:last-child {
-      border-bottom: none;
-    }
+    .deposit-row:last-child { border-bottom: none; }
 
     .deposit-row span:last-child {
       font-weight: 700;
@@ -412,10 +402,7 @@
       transition: 0.2s ease;
     }
 
-    .steps {
-      margin-top: 24px;
-      border-top: 1px solid #e5e0d8;
-    }
+    .steps { margin-top: 24px; border-top: 1px solid #e5e0d8; }
 
     .step {
       padding: 18px 0;
@@ -480,9 +467,7 @@
       margin-bottom: 14px;
     }
 
-    .contact-card strong {
-      color: var(--white);
-    }
+    .contact-card strong { color: var(--white); }
 
     footer {
       padding: 38px 8%;
@@ -509,13 +494,12 @@
 
       nav {
         width: 100%;
+        gap: 18px;
       }
 
-      nav a {
+      .language-switch {
+        width: 100%;
         margin-left: 0;
-        margin-right: 18px;
-        display: inline-block;
-        margin-bottom: 8px;
       }
 
       .hero,
@@ -527,22 +511,16 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-image {
-        height: 360px;
-      }
+      .hero-image { height: 360px; }
 
       .service-grid,
       .gallery-grid {
         grid-template-columns: 1fr;
       }
 
-      .section-head {
-        display: block;
-      }
+      .section-head { display: block; }
 
-      .section-head p {
-        margin-top: 18px;
-      }
+      .section-head p { margin-top: 18px; }
 
       .photo-large,
       .photo-small,
@@ -553,7 +531,7 @@
   </style>
 </head>
 
-<body>
+<body data-lang="en">
   <header>
     <div class="brand-text">
       The Paw Room
@@ -561,32 +539,53 @@
     </div>
 
     <nav>
-      <a href="#services">Services</a>
-      <a href="#space">Our Space</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#booking">Booking</a>
-      <a href="#terms">Terms</a>
-      <a href="#contact">Contact</a>
+      <a href="#services"><span class="en">Services</span><span class="zh">服务项目</span></a>
+      <a href="#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
+      <a href="#pricing"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
+      <a href="#booking"><span class="en">Booking</span><span class="zh">预约</span></a>
+      <a href="#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
+      <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
+
+      <div class="language-switch" aria-label="Language switcher">
+        <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
+        <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <div>
-        <div class="eyebrow">Bandar Kinrara · Puchong</div>
+        <div class="eyebrow">
+          <span class="en">Bandar Kinrara · Puchong</span>
+          <span class="zh">Bandar Kinrara · Puchong</span>
+        </div>
 
-        <h1>Professional care for pets, with structure and calm.</h1>
+        <h1>
+          <span class="en">Professional care for pets, with structure and calm.</span>
+          <span class="zh">专业、安心、有规划的宠物照顾服务。</span>
+        </h1>
 
         <p>
-          The Paw Room provides pet boarding, daycare and grooming services in a clean,
-          controlled and reliable environment.
-          <br /><br />
-          The Paw Room 提供专业宠物寄养、日托与美容服务，位于 Bandar Kinrara, Puchong。
+          <span class="en">
+            The Paw Room provides pet boarding, daycare and grooming services in a clean,
+            controlled and reliable environment.
+          </span>
+
+          <span class="zh">
+            The Paw Room 提供专业宠物寄养、日托与美容服务，环境干净、有规划，并注重狗狗的安全与舒适。
+          </span>
         </p>
 
         <div class="actions">
-          <a class="btn primary" href="#booking">Submit Booking Request</a>
-          <a class="btn secondary" href="https://wa.me/60163522880" target="_blank">WhatsApp Us</a>
+          <a class="btn primary" href="#booking">
+            <span class="en">Submit Booking Request</span>
+            <span class="zh">提交预约申请</span>
+          </a>
+
+          <a class="btn secondary" href="https://wa.me/60163522880" target="_blank">
+            WhatsApp Us
+          </a>
         </div>
       </div>
 
@@ -597,40 +596,60 @@
 
     <section id="services">
       <div class="section-head">
-        <h2>Services<br />服务项目</h2>
+        <h2>
+          <span class="en">Services</span>
+          <span class="zh">服务项目</span>
+        </h2>
+
         <p>
-          Practical pet care services designed for owners who want a professional,
-          reliable and straightforward experience.
+          <span class="en">
+            Practical pet care services designed for owners who want a professional,
+            reliable and straightforward experience.
+          </span>
+
+          <span class="zh">
+            为宠物主人提供专业、可靠、清楚直接的宠物照顾服务。
+          </span>
         </p>
       </div>
 
       <div class="service-grid">
         <div class="service-card">
           <div class="number">01</div>
-          <h3>Pet Boarding<br />宠物寄养</h3>
-          <p>Overnight care for pets while owners are travelling, working or away from home.</p>
+          <h3><span class="en">Pet Boarding</span><span class="zh">宠物寄养</span></h3>
+          <p>
+            <span class="en">Overnight care for pets while owners are travelling, working or away from home.</span>
+            <span class="zh">适合主人旅行、工作或暂时不在家时，为狗狗提供过夜照顾。</span>
+          </p>
         </div>
 
         <div class="service-card">
           <div class="number">02</div>
-          <h3>Pet Daycare<br />宠物日托</h3>
-          <p>Daytime supervision for pets who need company, structure and a safe space.</p>
+          <h3><span class="en">Pet Daycare</span><span class="zh">宠物日托</span></h3>
+          <p>
+            <span class="en">Daytime supervision for pets who need company, structure and a safe space.</span>
+            <span class="zh">为需要陪伴、看顾与安全空间的狗狗提供日间照顾。</span>
+          </p>
         </div>
 
         <div class="service-card">
           <div class="number">03</div>
-          <h3>Pet Grooming<br />宠物美容</h3>
-          <p>Bathing, hygiene care and grooming support to keep pets clean and well maintained.</p>
+          <h3><span class="en">Pet Grooming</span><span class="zh">宠物美容</span></h3>
+          <p>
+            <span class="en">Bathing, hygiene care and grooming support to keep pets clean and well maintained.</span>
+            <span class="zh">提供洗澡、基础卫生护理与美容整理，让狗狗保持干净舒适。</span>
+          </p>
         </div>
       </div>
     </section>
 
     <section class="photo-section" id="space">
       <div class="section-head">
-        <h2>Our Space<br />环境展示</h2>
+        <h2><span class="en">Our Space</span><span class="zh">环境展示</span></h2>
+
         <p>
-          A clean, simple and structured space prepared for pet boarding, daycare and grooming.
-          干净、简洁、有规划的宠物照顾空间。
+          <span class="en">A clean, simple and structured space prepared for pet boarding, daycare and grooming.</span>
+          <span class="zh">干净、简洁、有规划的宠物照顾空间，适合寄养、日托与美容服务。</span>
         </p>
       </div>
 
@@ -671,186 +690,169 @@
 
     <section class="pricing" id="pricing">
       <div class="section-head">
-        <h2>Pricing<br />服务价格</h2>
+        <h2><span class="en">Pricing</span><span class="zh">服务价格</span></h2>
+
         <p>
-          Pricing is based on pet weight, size and care requirements.
-          价格会根据狗狗体重、体型与照顾需求安排。
+          <span class="en">Pricing is based on pet weight, size and care requirements.</span>
+          <span class="zh">价格会根据狗狗体重、体型与照顾需求安排。</span>
         </p>
       </div>
 
       <div class="pricing-layout">
         <div class="pricing-card">
-          <span class="tag">Pet Boarding</span>
+          <span class="tag"><span class="en">Pet Boarding</span><span class="zh">宠物寄养</span></span>
 
           <div class="price-lead">
-            From RM50 / night
-            <span>宠物寄养 RM50 / 晚起</span>
+            <span class="en">From RM50 / night</span>
+            <span class="zh">RM50 / 晚起</span>
+            <span><span class="en">Pet boarding by weight</span><span class="zh">寄养按体重计算</span></span>
           </div>
 
           <p>
-            Boarding pricing is based on your pet’s weight to ensure fair space,
-            care and cleaning arrangement.
+            <span class="en">
+              Boarding pricing is based on your pet’s weight to ensure fair space,
+              care and cleaning arrangement.
+            </span>
+
+            <span class="zh">
+              寄养价格按狗狗体重计算，以公平安排空间、照顾时间与清洁工作。
+            </span>
           </p>
 
-          <p>
-            寄养价格按狗狗体重计算，以公平安排空间、照顾时间与清洁工作。
-          </p>
-          <div style="
-  margin-top: 22px;
-  padding: 18px;
-  border: 1px solid var(--line);
-  background: #101010;
-  color: #d8d2c8;
-  font-size: 14px;
-  line-height: 1.8;
-">
-  <strong style="color: #ffffff; letter-spacing: 0.5px;">
-    Boarding Check-Out Policy
-  </strong>
+          <div class="boarding-policy">
+            <strong>
+              <span class="en">Boarding Check-Out Policy</span>
+              <span class="zh">寄养 Check-Out 说明</span>
+            </strong>
 
-  <br /><br />
+            <br /><br />
 
-  Check-out time for pet boarding is before
-  <strong>12:00 PM</strong>.
+            <span class="en">
+              Check-out time for pet boarding is before <strong>12:00 PM</strong>.
+              Late check-out after 12:00 PM will be subject to an additional charge of
+              <strong>RM5 per hour</strong>.
+            </span>
 
-  Late check-out after 12:00 PM will be subject to an
-  additional charge of <strong>RM5 per hour</strong>.
+            <span class="zh">
+              寄养 check-out 时间为中午 <strong>12:00 前</strong>。
+              超过中午 12:00 后 check-out，将额外收取 <strong>每小时 RM5</strong> 的费用。
+            </span>
+          </div>
 
-  <br /><br />
-
-  寄养 check-out 时间为中午 12:00 前。<br />
-  超过中午 12:00 后 check-out，
-  将额外收取每小时 RM5 的费用。
-</div>
           <table class="price-table">
             <thead>
               <tr>
-                <th>Pet Weight</th>
-                <th>Rate / Night</th>
+                <th><span class="en">Pet Weight</span><span class="zh">狗狗体重</span></th>
+                <th><span class="en">Rate / Night</span><span class="zh">每晚价格</span></th>
               </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>1–4kg</td>
-                <td>RM50</td>
-              </tr>
-              <tr>
-                <td>5–9kg</td>
-                <td>RM55</td>
-              </tr>
-              <tr>
-                <td>10–14kg</td>
-                <td>RM60</td>
-              </tr>
-              <tr>
-                <td>15–24kg</td>
-                <td>RM65–RM70</td>
-              </tr>
-              <tr>
-                <td>25–34kg</td>
-                <td>RM75–RM80</td>
-              </tr>
-              <tr>
-                <td>35–44kg</td>
-                <td>RM85–RM90</td>
-              </tr>
+              <tr><td>1–4kg</td><td>RM50</td></tr>
+              <tr><td>5–9kg</td><td>RM55</td></tr>
+              <tr><td>10–14kg</td><td>RM60</td></tr>
+              <tr><td>15–24kg</td><td>RM65–RM70</td></tr>
+              <tr><td>25–34kg</td><td>RM75–RM80</td></tr>
+              <tr><td>35–44kg</td><td>RM85–RM90</td></tr>
             </tbody>
           </table>
         </div>
 
         <div class="pricing-card">
-          <span class="tag">Pet Daycare</span>
+          <span class="tag"><span class="en">Pet Daycare</span><span class="zh">宠物日托</span></span>
 
           <div class="price-lead">
-            From RM5 / hour
-            <span>宠物日托 RM5 / 小时起</span>
+            <span class="en">From RM5 / hour</span>
+            <span class="zh">RM5 / 小时起</span>
+            <span><span class="en">Hourly daycare by weight</span><span class="zh">日托按体重与小时计算</span></span>
           </div>
 
           <p>
-            Daycare is charged hourly and based on your pet’s weight.
-          </p>
-
-          <p>
-            日托按小时收费，价格根据狗狗体重计算。
+            <span class="en">Daycare is charged hourly and based on your pet’s weight.</span>
+            <span class="zh">日托按小时收费，价格根据狗狗体重计算。</span>
           </p>
 
           <table class="price-table">
             <thead>
               <tr>
-                <th>Pet Weight</th>
-                <th>Rate / Hour</th>
+                <th><span class="en">Pet Weight</span><span class="zh">狗狗体重</span></th>
+                <th><span class="en">Rate / Hour</span><span class="zh">每小时价格</span></th>
               </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>1–9kg</td>
-                <td>RM5 / hour</td>
-              </tr>
-              <tr>
-                <td>10–19kg</td>
-                <td>RM7 / hour</td>
-              </tr>
+              <tr><td>1–9kg</td><td>RM5 / hour</td></tr>
+              <tr><td>10–19kg</td><td>RM7 / hour</td></tr>
             </tbody>
           </table>
 
           <p style="margin-top: 22px;">
-            Check-in starts from 9:30am. Latest check-out time is 8:00pm.
-            Daycare is capped at 9 hours.
+            <span class="en">
+              Check-in starts from 9:30am. Latest check-out time is 8:00pm.
+              Daycare is capped at 9 hours.
+            </span>
+
+            <span class="zh">
+              日托 check-in 时间为早上 9:30 起，最迟 check-out 时间为晚上 8:00。
+              日托最多 9 小时。
+            </span>
           </p>
 
           <p>
-            日托 check-in 时间为早上 9:30 起，最迟 check-out 时间为晚上 8:00。
-            日托最多 9 小时。
-          </p>
-
-          <p>
-            Any stay above 9 hours will be charged as Pet Boarding / daily rate.
-          </p>
-
-          <p>
-            超过 9 小时将按宠物寄养 / 每日费用计算。
-          </p>
-        </div>
-
-        <div class="pricing-note">
-          <span class="tag">Important Note</span>
-
-          <h3>Limited large-room availability</h3>
-
-          <p>
-            Pets above 15kg require availability confirmation before booking is accepted,
-            as limited large-room space is available.
-          </p>
-
-          <p>
-            15kg 以上狗狗因需使用较大空间，名额有限。请先提交预约申请，
-            我们会确认档期、房间安排与狗狗情况后，再正式确认预约。
+            <span class="en">Any stay above 9 hours will be charged as Pet Boarding / daily rate.</span>
+            <span class="zh">超过 9 小时将按宠物寄养 / 每日费用计算。</span>
           </p>
         </div>
 
         <div class="pricing-note">
-          <span class="tag">Deposit Policy</span>
+          <span class="tag"><span class="en">Important Note</span><span class="zh">重要说明</span></span>
 
-          <h3>Boarding deposit only</h3>
+          <h3>
+            <span class="en">Limited large-room availability</span>
+            <span class="zh">大型犬房间名额有限</span>
+          </h3>
 
           <p>
-            Pet Boarding requires a RM50 deposit to reserve the slot.
-            If the boarding booking is cancelled, the deposit is non-refundable.
+            <span class="en">
+              Pets above 15kg require availability confirmation before booking is accepted,
+              as limited large-room space is available.
+            </span>
+
+            <span class="zh">
+              15kg 以上狗狗因需使用较大空间，名额有限。请先提交预约申请，
+              我们会确认档期、房间安排与狗狗情况后，再正式确认预约。
+            </span>
+          </p>
+        </div>
+
+        <div class="pricing-note">
+          <span class="tag"><span class="en">Deposit Policy</span><span class="zh">定金说明</span></span>
+
+          <h3>
+            <span class="en">Boarding deposit only</span>
+            <span class="zh">仅寄养需要定金</span>
+          </h3>
+
+          <p>
+            <span class="en">
+              Pet Boarding requires a RM50 deposit to reserve the slot.
+              If the boarding booking is cancelled, the deposit is non-refundable.
+            </span>
+
+            <span class="zh">
+              宠物寄养需要支付 RM50 定金以保留位置。如取消寄养预约，定金将不予退还。
+            </span>
           </p>
 
           <p>
-            宠物寄养需要支付 RM50 定金以保留位置。如取消寄养预约，定金将不予退还。
-          </p>
+            <span class="en">
+              Full payment is required upon check-in.
+              Daycare and Grooming do not require deposit.
+            </span>
 
-          <p>
-            Full payment is required upon check-in.
-            Daycare and Grooming do not require deposit.
-          </p>
-
-          <p>
-            Check-in 时需支付全额费用。宠物日托与宠物美容不需要支付定金。
+            <span class="zh">
+              Check-in 时需支付全额费用。宠物日托与宠物美容不需要支付定金。
+            </span>
           </p>
         </div>
       </div>
@@ -858,171 +860,231 @@
 
     <section class="booking" id="booking">
       <div class="section-head">
-        <h2>Booking Request<br />预约申请</h2>
+        <h2><span class="en">Booking Request</span><span class="zh">预约申请</span></h2>
+
         <p>
-          All bookings are subject to availability. Please submit the booking request form first.
-          We will contact you to confirm availability, pricing and payment arrangement.
+          <span class="en">
+            All bookings are subject to availability. Please submit the booking request form first.
+            We will contact you to confirm availability, pricing and payment arrangement.
+          </span>
+
+          <span class="zh">
+            所有预约需视档期而定。请先提交预约申请表格，我们会联系你确认档期、价格与付款安排。
+          </span>
         </p>
       </div>
 
       <div class="booking-layout">
         <div class="booking-box">
-          <h3>Payment Summary / 付款说明</h3>
+          <h3><span class="en">Payment Summary</span><span class="zh">付款说明</span></h3>
 
           <div class="deposit-row">
-            <span>Pet Boarding Deposit / 寄养定金</span>
+            <span><span class="en">Pet Boarding Deposit</span><span class="zh">寄养定金</span></span>
             <span>RM50</span>
           </div>
 
           <div class="deposit-row">
-            <span>Pet Daycare Deposit / 日托定金</span>
-            <span>Not required</span>
+            <span><span class="en">Pet Daycare Deposit</span><span class="zh">日托定金</span></span>
+            <span><span class="en">Not required</span><span class="zh">不需要</span></span>
           </div>
 
           <div class="deposit-row">
-            <span>Pet Grooming Deposit / 美容定金</span>
-            <span>Not required</span>
+            <span><span class="en">Pet Grooming Deposit</span><span class="zh">美容定金</span></span>
+            <span><span class="en">Not required</span><span class="zh">不需要</span></span>
           </div>
 
           <p style="margin-top: 20px;">
-            Boarding deposit is required only after availability is confirmed by The Paw Room.
-            如取消寄养预约，定金将不予退还。
+            <span class="en">
+              Boarding deposit is required only after availability is confirmed by The Paw Room.
+              If the booking is cancelled, the deposit is non-refundable.
+            </span>
+
+            <span class="zh">
+              寄养定金只会在 The Paw Room 确认有档期后才需要支付。
+              如取消寄养预约，定金将不予退还。
+            </span>
           </p>
 
           <p>
-            For daycare, check-in starts from 9:30am and latest check-out is 8:00pm.
-            Daycare is capped at 9 hours. Any stay above 9 hours will be charged as boarding.
-          </p>
+            <span class="en">
+              For daycare, check-in starts from 9:30am and latest check-out is 8:00pm.
+              Daycare is capped at 9 hours. Any stay above 9 hours will be charged as boarding.
+            </span>
 
-          <p>
-            日托 check-in 时间为早上 9:30 起，最迟 check-out 时间为晚上 8:00。
-            日托最多 9 小时，超过 9 小时将按寄养费用计算。
+            <span class="zh">
+              日托 check-in 时间为早上 9:30 起，最迟 check-out 时间为晚上 8:00。
+              日托最多 9 小时，超过 9 小时将按寄养费用计算。
+            </span>
           </p>
         </div>
 
         <div class="policy-box">
-  <h3>How Booking Works / 预约流程</h3>
+          <h3><span class="en">How Booking Works</span><span class="zh">预约流程</span></h3>
 
-  <div class="steps">
-    <div class="step">
-      <strong>1. Contact us on WhatsApp</strong>
-      Please contact us first to check availability for your preferred date.
-    </div>
+          <div class="steps">
+            <div class="step">
+              <strong><span class="en">1. Contact us on WhatsApp</span><span class="zh">1. 先通过 WhatsApp 联系我们</span></strong>
+              <span class="en">Please contact us first to check availability for your preferred date.</span>
+              <span class="zh">请先联系我们查询你想要的日期是否还有档期。</span>
+            </div>
 
-    <div class="step">
-      <strong>2. Submit booking request</strong>
-      Fill in owner details, pet details, check-in date and check-out date.
-    </div>
+            <div class="step">
+              <strong><span class="en">2. Submit booking request</span><span class="zh">2. 提交预约申请</span></strong>
+              <span class="en">Fill in owner details, pet details, check-in date and check-out date.</span>
+              <span class="zh">填写主人资料、宠物资料、check-in 日期与 check-out 日期。</span>
+            </div>
 
-    <div class="step">
-      <strong>3. Availability confirmation</strong>
-      We will check space, room arrangement and pet suitability.
-    </div>
+            <div class="step">
+              <strong><span class="en">3. Availability confirmation</span><span class="zh">3. 确认档期与安排</span></strong>
+              <span class="en">We will check space, room arrangement and pet suitability.</span>
+              <span class="zh">我们会确认空间、房间安排与狗狗是否适合寄养或日托。</span>
+            </div>
 
-    <div class="step">
-      <strong>4. Deposit arrangement</strong>
-      Boarding deposit is arranged after availability is confirmed.
-    </div>
+            <div class="step">
+              <strong><span class="en">4. Deposit arrangement</span><span class="zh">4. 安排定金</span></strong>
+              <span class="en">Boarding deposit is arranged after availability is confirmed.</span>
+              <span class="zh">寄养定金会在确认有档期后才安排支付。</span>
+            </div>
 
-    <div class="step">
-      <strong>5. Booking confirmed</strong>
-      Your booking is confirmed only after confirmation from The Paw Room.
-    </div>
-  </div>
+            <div class="step">
+              <strong><span class="en">5. Booking confirmed</span><span class="zh">5. 预约正式确认</span></strong>
+              <span class="en">Your booking is confirmed only after confirmation from The Paw Room.</span>
+              <span class="zh">只有在 The Paw Room 确认后，预约才算正式确认。</span>
+            </div>
+          </div>
 
-  <p style="margin-top: 22px;">
-    Please WhatsApp us first to check availability. Submitting the form does not mean the booking is automatically confirmed.
-  </p>
+          <p style="margin-top: 22px;">
+            <span class="en">
+              Please WhatsApp us first to check availability.
+              Submitting the form does not mean the booking is automatically confirmed.
+            </span>
 
-  <p>
-    请先 WhatsApp 联系我们查询档期。提交表格后不代表预约已自动确认，我们会先确认档期、空间与狗狗情况。
-  </p>
+            <span class="zh">
+              请先 WhatsApp 联系我们查询档期。提交表格后不代表预约已自动确认，
+              我们会先确认档期、空间与狗狗情况。
+            </span>
+          </p>
 
-  <div class="actions" style="margin-top: 20px;">
-    <a
-      class="black-btn"
-      href="https://docs.google.com/forms/d/e/1FAIpQLSdN3-L1yB_PedrJH3CvGJXttJ_KFwZRW76-xl2OXmUL3lZp9w/viewform?usp=header"
-      target="_blank"
-    >
-      Submit Booking Form
-    </a>
+          <div class="actions" style="margin-top: 20px;">
+            <a
+              class="black-btn"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdN3-L1yB_PedrJH3CvGJXttJ_KFwZRW76-xl2OXmUL3lZp9w/viewform?usp=header"
+              target="_blank"
+            >
+              <span class="en">Submit Booking Form</span>
+              <span class="zh">提交预约表格</span>
+            </a>
 
-    <a
-      class="black-btn"
-      href="https://wa.me/60163522880?text=Hi%20The%20Paw%20Room%2C%20I%20would%20like%20to%20check%20boarding%20or%20daycare%20availability."
-      target="_blank"
-    >
-      WhatsApp Availability
-    </a>
-  </div>
-</div>
-
-         
+            <a
+              class="black-btn"
+              href="https://wa.me/60163522880?text=Hi%20The%20Paw%20Room%2C%20I%20would%20like%20to%20check%20boarding%20or%20daycare%20availability."
+              target="_blank"
+            >
+              <span class="en">WhatsApp Availability</span>
+              <span class="zh">WhatsApp 查询档期</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="terms" id="terms">
       <div class="section-head">
-        <h2>Booking Terms<br />Boarding Requirements</h2>
+        <h2><span class="en">Booking Terms</span><span class="zh">预约条规</span></h2>
+
         <p>
-          To keep every pet safe, comfortable and properly cared for, all pets must meet
-          the following requirements before boarding or daycare is accepted.
+          <span class="en">
+            To keep every pet safe, comfortable and properly cared for, all pets must meet
+            the following requirements before boarding or daycare is accepted.
+          </span>
+
+          <span class="zh">
+            为了确保每只宠物安全、舒适并获得合适照顾，
+            所有狗狗在接受寄养或日托前都必须符合以下要求。
+          </span>
         </p>
       </div>
 
       <div class="terms-grid">
         <div class="terms-box">
-          <span class="tag">Requirements</span>
-          <h3>Health & safety requirements</h3>
+          <span class="tag"><span class="en">Requirements</span><span class="zh">基本要求</span></span>
+
+          <h3>
+            <span class="en">Health & safety requirements</span>
+            <span class="zh">健康与安全要求</span>
+          </h3>
 
           <ul class="terms-list">
-            <li>Dogs must have completed their required vaccinations.</li>
-            <li>Dogs must be free from skin disease.</li>
-            <li>Dogs must be free from fleas and ticks.</li>
-            <li>Dogs must be free from contagious health conditions.</li>
-            <li>Dogs with aggressive behaviour, frequent barking, or a history of biting people or dogs may not be accepted.</li>
-            <li>Owners are required to provide the dog’s daily food and personal items.</li>
-            <li>Female dogs in heat must wear diapers, provided by the owner.</li>
-            <li>Male dogs are required to wear diapers during boarding or daycare. Diapers must be provided by the pet owner.</li>
+            <li><span class="en">Dogs must have completed their required vaccinations.</span><span class="zh">狗狗必须已完成所需疫苗。</span></li>
+            <li><span class="en">Dogs must be free from skin disease.</span><span class="zh">狗狗不可患有皮肤病。</span></li>
+            <li><span class="en">Dogs must be free from fleas and ticks.</span><span class="zh">狗狗不可有跳蚤或壁虱。</span></li>
+            <li><span class="en">Dogs must be free from contagious health conditions.</span><span class="zh">狗狗不可有传染性健康问题。</span></li>
+            <li><span class="en">Dogs with aggressive behaviour, frequent barking, or a history of biting people or dogs may not be accepted.</span><span class="zh">有攻击行为、频繁吠叫，或曾咬人 / 咬狗的狗狗可能不被接受。</span></li>
+            <li><span class="en">Owners are required to provide the dog’s daily food and personal items.</span><span class="zh">主人需提供狗狗日常食物与个人用品。</span></li>
+            <li><span class="en">Female dogs in heat must wear diapers, provided by the owner.</span><span class="zh">发情期母狗必须穿尿片，尿片需由主人提供。</span></li>
+            <li><span class="en">Male dogs are required to wear diapers during boarding or daycare. Diapers must be provided by the pet owner.</span><span class="zh">公狗在寄养或日托期间需穿尿片，尿片需由主人提供。</span></li>
           </ul>
         </div>
 
         <div class="terms-box">
-          <span class="tag">Owner Responsibility</span>
-          <h3>Disclosure & special care</h3>
+          <span class="tag"><span class="en">Owner Responsibility</span><span class="zh">主人责任</span></span>
+
+          <h3>
+            <span class="en">Disclosure & special care</span>
+            <span class="zh">资料告知与特别照顾</span>
+          </h3>
 
           <ul class="terms-list">
-            <li>If your dog requires special attention, including food allergies, health conditions or behavioural habits, the owner must inform The Paw Room in advance.</li>
-            <li>This allows us to record the information properly and provide suitable care.</li>
-            <li>If the owner fails to disclose important information and the dog becomes injured, unwell or unsuitable for boarding, the related responsibility will be borne by the owner.</li>
-            <li>If a dog shows aggressive or severe stress-related behaviour during boarding, The Paw Room will contact the owner and may require early pick-up.</li>
-            <li>Fees paid for the affected booking period are non-refundable if early pick-up is required due to safety or behaviour concerns.</li>
-            <li>If a dog becomes unwell during boarding or daycare, The Paw Room will contact the owner immediately. In serious cases, the dog may be sent to a veterinary clinic, and all related costs will be borne by the owner.</li>
+            <li><span class="en">If your dog requires special attention, including food allergies, health conditions or behavioural habits, the owner must inform The Paw Room in advance.</span><span class="zh">如果狗狗有食物敏感、健康状况或行为习惯等需要特别注意的事项，主人必须提前告知 The Paw Room。</span></li>
+            <li><span class="en">This allows us to record the information properly and provide suitable care.</span><span class="zh">这样我们才能记录资料并提供更合适的照顾。</span></li>
+            <li><span class="en">If the owner fails to disclose important information and the dog becomes injured, unwell or unsuitable for boarding, the related responsibility will be borne by the owner.</span><span class="zh">如主人未提前告知重要资料，导致狗狗受伤、不适或不适合继续寄养，相关责任将由主人承担。</span></li>
+            <li><span class="en">If a dog shows aggressive or severe stress-related behaviour during boarding, The Paw Room will contact the owner and may require early pick-up.</span><span class="zh">如狗狗在寄养期间出现攻击性或严重压力反应，The Paw Room 会联系主人，并可能要求提前接回。</span></li>
+            <li><span class="en">Fees paid for the affected booking period are non-refundable if early pick-up is required due to safety or behaviour concerns.</span><span class="zh">如因安全或行为问题需要提前接回，已支付的相关预约费用将不予退款。</span></li>
+            <li><span class="en">If a dog becomes unwell during boarding or daycare, The Paw Room will contact the owner immediately. In serious cases, the dog may be sent to a veterinary clinic, and all related costs will be borne by the owner.</span><span class="zh">如狗狗在寄养或日托期间身体不适，The Paw Room 会立即联系主人。严重情况下可能会送往兽医诊所，相关费用由主人承担。</span></li>
           </ul>
         </div>
       </div>
 
       <div class="warning-box">
-        The Paw Room reserves the right to decline any pet that does not meet boarding requirements
-        or may present a safety risk, without further explanation.
+        <span class="en">
+          The Paw Room reserves the right to decline any pet that does not meet boarding requirements
+          or may present a safety risk, without further explanation.
+        </span>
+
+        <span class="zh">
+          The Paw Room 保留拒绝任何不符合寄养要求或可能造成安全风险的宠物之权利，恕不另行解释。
+        </span>
       </div>
     </section>
 
     <section id="contact">
       <div class="contact">
         <div>
-          <div class="eyebrow">Contact</div>
-          <h2>Visit or contact<br />The Paw Room</h2>
+          <div class="eyebrow"><span class="en">Contact</span><span class="zh">联系</span></div>
+
+          <h2>
+            <span class="en">Visit or contact The Paw Room</span>
+            <span class="zh">联系 The Paw Room</span>
+          </h2>
         </div>
 
         <div class="contact-card">
           <p><strong>WhatsApp:</strong> 016-3522880</p>
-          <p><strong>Location:</strong> Bandar Kinrara, Puchong</p>
-          <p><strong>Services:</strong> Pet Boarding · Pet Daycare · Pet Grooming</p>
+
+          <p>
+            <strong><span class="en">Location:</span><span class="zh">地点：</span></strong>
+            Bandar Kinrara, Puchong
+          </p>
+
+          <p>
+            <strong><span class="en">Services:</span><span class="zh">服务：</span></strong>
+            <span class="en">Pet Boarding · Pet Daycare · Pet Grooming</span>
+            <span class="zh">宠物寄养 · 宠物日托 · 宠物美容</span>
+          </p>
 
           <a class="btn primary" href="https://wa.me/60163522880" target="_blank">
-            Chat on WhatsApp
+            <span class="en">Chat on WhatsApp</span>
+            <span class="zh">WhatsApp 联系我们</span>
           </a>
         </div>
       </div>
@@ -1031,7 +1093,24 @@
 
   <footer>
     <strong>The Paw Room</strong>
-    <span>Pet Boarding · Daycare · Grooming · Bandar Kinrara, Puchong</span>
+    <span>
+      <span class="en">Pet Boarding · Daycare · Grooming · Bandar Kinrara, Puchong</span>
+      <span class="zh">宠物寄养 · 日托 · 美容 · Bandar Kinrara, Puchong</span>
+    </span>
   </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : 'en');
+      localStorage.setItem('pawRoomLanguage', lang);
+    }
+
+    const savedLanguage = localStorage.getItem('pawRoomLanguage');
+
+    if (savedLanguage === 'zh' || savedLanguage === 'en') {
+      setLanguage(savedLanguage);
+    }
+  </script>
 </body>
 </html>
