@@ -469,6 +469,32 @@
 
     .contact-card strong { color: var(--white); }
 
+    .instagram-section {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .instagram-showcase {
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    .instagram-showcase img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .instagram-actions {
+      margin-top: 26px;
+      justify-content: center;
+    }
+
     footer {
       padding: 38px 8%;
       display: flex;
@@ -528,47 +554,6 @@
         height: 320px;
       }
     }
- .instagram-section {
-  background: var(--black);
-  color: var(--white);
-  padding: 80px 20px;
-}
-
-.instagram-section .section-head {
-  max-width: 700px;
-  margin: 0 auto 28px;
-  text-align: center;
-}
-
-.instagram-section h2 {
-  font-size: 32px;
-  margin-bottom: 14px;
-}
-
-.instagram-section p {
-  color: var(--grey);
-  font-size: 16px;
-}
-
-.instagram-showcase {
-  max-width: 1100px;
-  margin: 0 auto;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  overflow: hidden;
-  background: #080808;
-}
-
-.instagram-showcase img {
-  width: 100%;
-  display: block;
-}
-
-.instagram-actions {
-  margin-top: 26px;
-  display: flex;
-  justify-content: center;
-}
   </style>
 </head>
 
@@ -585,6 +570,7 @@
       <a href="#pricing"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
       <a href="#booking"><span class="en">Booking</span><span class="zh">预约</span></a>
       <a href="#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
+      <a href="#instagram">Instagram</a>
       <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
 
       <div class="language-switch" aria-label="Language switcher">
@@ -769,50 +755,42 @@
             <br /><br />
 
             <span class="en">
-              <div class="boarding-policy">
-  <strong>
-    <span class="en">Boarding Check-Out Policy</span>
-    <span class="zh">寄养 Check-Out 说明</span>
-  </strong>
+              Check-out time for pet boarding is before <strong>12:00 PM</strong>.
 
-  <br /><br />
+              <br /><br />
 
-  <span class="en">
-    Check-out time for pet boarding is before <strong>12:00 PM</strong>.
+              Late check-out between 12:00 PM and 5:00 PM will be charged at
+              <strong>RM10 per hour</strong>.
 
-    <br /><br />
+              <br /><br />
 
-    Late check-out between 12:00 PM and 5:00 PM will be charged at
-    <strong>RM10 per hour</strong>.
+              Check-out after 5:00 PM may be charged as a full daycare session
+              or additional boarding day.
 
-    <br /><br />
+              <br /><br />
 
-    Check-out after 5:00 PM may be charged as a full daycare session
-    or additional boarding day.
+              This allows proper room preparation and scheduling for incoming pets.
+            </span>
 
-    <br /><br />
+            <span class="zh">
+              寄养 check-out 时间为中午 <strong>12:00 前</strong>。
 
-    This allows proper room preparation and scheduling for incoming pets.
-  </span>
+              <br /><br />
 
-  <span class="zh">
-    寄养 check-out 时间为中午 <strong>12:00 前</strong>。
+              中午 12:00 PM 至下午 5:00 PM 之间 check-out，
+              将额外收取 <strong>每小时 RM10</strong> 的费用。
 
-    <br /><br />
+              <br /><br />
 
-    中午 12:00 PM 至下午 5:00 PM 之间 check-out，
-    将额外收取 <strong>每小时 RM10</strong> 的费用。
+              下午 5:00 PM 后 check-out，
+              可能会按完整日托或额外一天寄养费用计算。
 
-    <br /><br />
+              <br /><br />
 
-    下午 5:00 PM 后 check-out，
-    可能会按完整日托或额外一天寄养费用计算。
+              以方便安排房间整理与后续入住安排。
+            </span>
+          </div>
 
-    <br /><br />
-
-    以方便安排房间整理与后续入住安排。
-  </span>
-</div>
           <table class="price-table">
             <thead>
               <tr>
@@ -1131,6 +1109,39 @@
       </div>
     </section>
 
+    <section class="instagram-section" id="instagram">
+      <div class="section-head">
+        <h2>
+          <span class="en">Happy Guests</span>
+          <span class="zh">可爱的入住小客人</span>
+        </h2>
+
+        <p>
+          <span class="en">
+            Real moments from The Paw Room — calm stays, cozy rest and happy furry guests.
+          </span>
+          <span class="zh">
+            The Paw Room 的日常小记录：安静休息、安心寄养和可爱的毛孩们。
+          </span>
+        </p>
+      </div>
+
+      <div class="instagram-showcase">
+        <img src="images/happy-guests-collage.jpg" alt="Happy pet boarding guests at The Paw Room">
+      </div>
+
+      <div class="actions instagram-actions">
+        <a
+          class="btn primary"
+          href="https://www.instagram.com/the.pawroom"
+          target="_blank"
+        >
+          <span class="en">Follow @the.pawroom</span>
+          <span class="zh">关注 @the.pawroom</span>
+        </a>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="contact">
         <div>
@@ -1162,38 +1173,6 @@
           </a>
         </div>
       </div>
-   <section class="instagram-section" id="instagram">
-  <div class="section-head">
-    <h2>
-      <span class="en">Happy Guests</span>
-      <span class="zh">可爱的入住小客人</span>
-    </h2>
-
-    <p>
-      <span class="en">
-        Real moments from The Paw Room — calm stays, cozy rest and happy furry guests.
-      </span>
-      <span class="zh">
-        The Paw Room 的日常小记录：安静休息、安心寄养和可爱的毛孩们。
-      </span>
-    </p>
-  </div>
-
-  <div class="instagram-showcase">
-    <img src="images/happy-guests-collage.jpg" alt="Happy pet boarding guests at The Paw Room">
-  </div>
-
-  <div class="actions instagram-actions">
-    <a
-      class="btn primary"
-      href="https://www.instagram.com/the.pawroom"
-      target="_blank"
-    >
-      <span class="en">Follow @the.pawroom</span>
-      <span class="zh">关注 @the.pawroom</span>
-    </a>
-  </div>
-</section>
     </section>
   </main>
 
