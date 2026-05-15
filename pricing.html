@@ -1,4 +1,791 @@
-<section class="pricing" id="pricing">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>The Paw Room | Pet Boarding, Daycare & Grooming in Puchong</title>
+  <meta
+    name="description"
+    content="The Paw Room provides professional pet boarding, daycare and grooming services in Bandar Kinrara, Puchong."
+  />
+
+  <style>
+    :root {
+      --black: #050505;
+      --white: #ffffff;
+      --offwhite: #f4f1ec;
+      --grey: #9a9a9a;
+      --line: #2a2a2a;
+      --soft-line: #d8d2c8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    body[data-lang="en"] .zh { display: none !important; }
+    body[data-lang="zh"] .en { display: none !important; }
+
+    img { width: 100%; height: 100%; display: block; object-fit: cover; }
+
+    header {
+      width: 100%;
+      padding: 26px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 5, 5, 0.96);
+      position: relative;
+      z-index: 10;
+    }
+
+    .brand-text {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: var(--grey);
+      margin-top: 2px;
+      font-weight: 400;
+    }
+   .site-logo{
+  width:170px;
+  height:auto;
+  display:block;
+  margin-left:25px;
+}
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--grey);
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover { color: var(--white); }
+
+    .language-switch {
+      display: flex;
+      gap: 8px;
+      margin-left: 4px;
+    }
+
+    .language-switch button {
+      background: transparent;
+      color: var(--grey);
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .language-switch button:hover,
+    body[data-lang="en"] .language-switch button[data-switch="en"],
+    body[data-lang="zh"] .language-switch button[data-switch="zh"] {
+      color: var(--black);
+      background: var(--white);
+      border-color: var(--white);
+    }
+
+    section { padding: 82px 8%; border-bottom: 1px solid var(--line); }
+
+    .eyebrow {
+      color: var(--grey);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+
+    h3 { font-weight: 500; }
+
+    .hero {
+      min-height: 88vh;
+      padding: 80px 8%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero p {
+      color: #cfcfcf;
+      max-width: 620px;
+      font-size: 18px;
+      margin-bottom: 34px;
+    }
+
+    .hero-image {
+      height: 560px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #111;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 15px 24px;
+      border: 1px solid var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      transition: 0.2s ease;
+    }
+
+    .btn.primary { background: var(--white); color: var(--black); }
+    .btn.secondary { background: transparent; color: var(--white); }
+    .btn:hover, .black-btn:hover { opacity: 0.75; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 42px;
+      align-items: end;
+    }
+
+    .section-head p {
+      color: var(--grey);
+      max-width: 520px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .service-card {
+      padding: 34px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      min-height: 260px;
+      background: #080808;
+    }
+
+    .service-card .number {
+      color: var(--grey);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 38px;
+    }
+
+    .service-card h3 {
+      font-size: 26px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .service-card p {
+      color: var(--grey);
+      font-size: 15px;
+    }
+
+    .photo-section { background: var(--offwhite); color: var(--black); }
+    .photo-section .section-head p { color: #555; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+    }
+
+    .photo-large { height: 520px; overflow: hidden; background: #ddd; }
+    .photo-stack { display: grid; gap: 18px; }
+    .photo-small { height: 251px; overflow: hidden; background: #ddd; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .gallery-item { height: 260px; overflow: hidden; background: #ddd; }
+
+    .pricing { background: #080808; color: var(--white); }
+
+    .pricing-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .pricing-card,
+    .pricing-note {
+      border: 1px solid var(--line);
+      padding: 34px;
+      background: #0b0b0b;
+    }
+
+    .pricing-card h3,
+    .pricing-note h3 {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .price-lead {
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .price-lead span {
+      display: block;
+      color: var(--grey);
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 12px;
+    }
+
+    .pricing-card p,
+    .pricing-note p {
+      color: var(--grey);
+      margin-bottom: 18px;
+    }
+
+    .boarding-policy {
+      margin-top: 22px;
+      margin-bottom: 24px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #101010;
+      color: #d8d2c8;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .boarding-policy strong { color: #ffffff; }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      color: #e7e7e7;
+      font-size: 15px;
+    }
+
+    .price-table th,
+    .price-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+      text-align: left;
+    }
+
+    .price-table td:last-child,
+    .price-table th:last-child {
+      text-align: right;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      color: var(--grey);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .booking,
+    .terms {
+      background: var(--offwhite);
+      color: var(--black);
+    }
+
+    .booking .section-head p,
+    .terms .section-head p {
+      color: #555;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .booking-box,
+    .policy-box,
+    .terms-box {
+      border: 1px solid var(--soft-line);
+      padding: 34px;
+      background: #fff;
+    }
+
+    .booking-box h3,
+    .policy-box h3,
+    .terms-box h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .deposit-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e0d8;
+      color: #222;
+      gap: 20px;
+    }
+
+    .deposit-row:last-child { border-bottom: none; }
+
+    .deposit-row span:last-child {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .policy-box p,
+    .booking-box p,
+    .terms-box p {
+      color: #555;
+      margin-bottom: 18px;
+    }
+
+    .black-btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--black);
+      color: var(--white);
+      text-decoration: none;
+      padding: 15px 24px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      transition: 0.2s ease;
+    }
+
+    .steps { margin-top: 24px; border-top: 1px solid #e5e0d8; }
+
+    .step {
+      padding: 18px 0;
+      border-bottom: 1px solid #e5e0d8;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .terms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .terms-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      color: #555;
+    }
+
+    .terms-list li {
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .terms-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #111;
+      font-weight: 700;
+    }
+
+    .warning-box {
+      margin-top: 28px;
+      border: 1px solid #111;
+      padding: 22px;
+      background: #f8f5ef;
+      color: #222;
+      font-weight: 600;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .contact-card {
+      border: 1px solid var(--line);
+      padding: 36px;
+      background: #080808;
+    }
+
+    .contact-card p {
+      color: var(--grey);
+      margin-bottom: 14px;
+    }
+
+    .contact-card strong { color: var(--white); }
+
+    .instagram-section {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .instagram-showcase {
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #080808;
+    }
+
+    .instagram-showcase img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .instagram-actions {
+      margin-top: 26px;
+      justify-content: center;
+    }
+  .floating-whatsapp {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  text-decoration: none;
+  padding: 16px 26px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+
+  box-shadow:
+    0 10px 30px rgba(37, 211, 102, 0.4),
+    0 0 20px rgba(37, 211, 102, 0.25);
+
+  border: 2px solid rgba(255,255,255,0.15);
+
+  backdrop-filter: blur(6px);
+
+  transition: all 0.3s ease;
+
+animation: whatsapp-pulse 3.5s infinite;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-4px) scale(1.05);
+
+  box-shadow:
+    0 15px 40px rgba(37, 211, 102, 0.6),
+    0 0 30px rgba(37, 211, 102, 0.45);
+}
+
+.floating-whatsapp::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20.52 3.48A11.9 11.9 0 0012.06 0C5.48 0 .12 5.35.12 11.94c0 2.1.55 4.16 1.6 5.98L0 24l6.26-1.64a11.9 11.9 0 005.8 1.48h.01c6.58 0 11.94-5.35 11.94-11.94 0-3.19-1.24-6.19-3.49-8.42zM12.07 21.8h-.01a9.86 9.86 0 01-5.02-1.37l-.36-.21-3.72.98 1-3.63-.23-.37a9.83 9.83 0 01-1.5-5.25C2.24 6.5 6.63 2.1 12.07 2.1c2.63 0 5.1 1.02 6.96 2.88a9.8 9.8 0 012.88 6.96c0 5.44-4.4 9.86-9.84 9.86zm5.4-7.37c-.3-.15-1.77-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.17.2-.35.22-.65.08-.3-.15-1.25-.46-2.38-1.48-.88-.78-1.48-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.08-.8.37-.27.3-1.05 1.02-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.23 5.14 4.53.72.3 1.28.48 1.72.62.72.23 1.37.2 1.88.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>');
+
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 12px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.floating-whatsapp::before {
+  content: "🟢";
+  font-size: 18px;
+}
+
+    footer {
+      padding: 38px 8%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--grey);
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: var(--white);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        align-items: flex-start;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      nav {
+        width: 100%;
+        gap: 18px;
+      }
+
+      .language-switch {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .hero,
+      .photo-grid,
+      .pricing-layout,
+      .booking-layout,
+      .terms-grid,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image { height: 360px; }
+
+      .service-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head { display: block; }
+
+      .section-head p { margin-top: 18px; }
+
+      .photo-large,
+      .photo-small,
+      .gallery-item {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body data-lang="en">
+  <header>
+    <div class="brand-text">
+ <img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
+</div>
+    <nav>
+      <a href="#services"><span class="en">Services</span><span class="zh">服务项目</span></a>
+      <a href="#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
+      <a href="#pricing"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
+      <a href="#booking"><span class="en">Booking</span><span class="zh">预约</span></a>
+      <a href="#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
+      <a href="#instagram">Instagram</a>
+      <a href="#contact"><span class="en">Contact</span><span class="zh">联系</span></a>
+
+      <div class="language-switch" aria-label="Language switcher">
+        <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
+        <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">
+          <span class="en">Bandar Kinrara · Puchong</span>
+          <span class="zh">Bandar Kinrara · Puchong</span>
+        </div>
+
+        <h1>
+          <span class="en">Professional care for pets, with structure and calm.</span>
+          <span class="zh">专业、安心、有规划的宠物照顾服务。</span>
+        </h1>
+
+        <p>
+          <span class="en">
+            The Paw Room provides pet boarding, daycare and grooming services in a clean,
+            controlled and reliable environment.
+          </span>
+
+          <span class="zh">
+            The Paw Room 提供专业宠物寄养、日托与美容服务，环境干净、有规划，并注重狗狗的安全与舒适。
+          </span>
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="#booking">
+            <span class="en">Submit Booking Request</span>
+            <span class="zh">提交预约申请</span>
+          </a>
+
+          <a class="btn secondary" href="https://wa.me/60163522880" target="_blank">
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/paw-room-boarding-area-1.jpg" alt="The Paw Room boarding area">
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-head">
+        <h2>
+          <span class="en">Services</span>
+          <span class="zh">服务项目</span>
+        </h2>
+
+        <p>
+          <span class="en">
+            Practical pet care services designed for owners who want a professional,
+            reliable and straightforward experience.
+          </span>
+
+          <span class="zh">
+            为宠物主人提供专业、可靠、清楚直接的宠物照顾服务。
+          </span>
+        </p>
+      </div>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="number">01</div>
+          <h3><span class="en">Pet Boarding</span><span class="zh">宠物寄养</span></h3>
+          <p>
+            <span class="en">Overnight care for pets while owners are travelling, working or away from home.</span>
+            <span class="zh">适合主人旅行、工作或暂时不在家时，为狗狗提供过夜照顾。</span>
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="number">02</div>
+          <h3><span class="en">Pet Daycare</span><span class="zh">宠物日托</span></h3>
+          <p>
+            <span class="en">Daytime supervision for pets who need company, structure and a safe space.</span>
+            <span class="zh">为需要陪伴、看顾与安全空间的狗狗提供日间照顾。</span>
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="number">03</div>
+          <h3><span class="en">Pet Grooming</span><span class="zh">宠物美容</span></h3>
+          <p>
+            <span class="en">Bathing, hygiene care and grooming support to keep pets clean and well maintained.</span>
+            <span class="zh">提供洗澡、基础卫生护理与美容整理，让狗狗保持干净舒适。</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-section" id="space">
+      <div class="section-head">
+        <h2><span class="en">Our Space</span><span class="zh">环境展示</span></h2>
+
+        <p>
+          <span class="en">A clean, simple and structured space prepared for pet boarding, daycare and grooming.</span>
+          <span class="zh">干净、简洁、有规划的宠物照顾空间，适合寄养、日托与美容服务。</span>
+        </p>
+      </div>
+
+      <div class="photo-grid">
+        <div class="photo-large">
+          <img src="images/paw-room-boarding-area-2.jpg" alt="Pet boarding area at The Paw Room">
+        </div>
+
+        <div class="photo-stack">
+          <div class="photo-small">
+            <img src="images/paw-room-playpen-detail-1.jpg" alt="Pet playpen detail">
+          </div>
+
+          <div class="photo-small">
+            <img src="images/paw-room-grooming-room-1.jpg" alt="Pet grooming room">
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/paw-room-boarding-room-1.jpg" alt="The Paw Room boarding room">
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/paw-room-playpen-detail-2.jpg" alt="Playpen setup">
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/paw-room-drinking-1.jpg" alt="Pet drinking station">
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/paw-room-toys-1.jpg" alt="Pet toys and play area">
+        </div>
+      </div>
+    </section><section class="pricing" id="pricing">
       <div class="section-head">
         <h2><span class="en">Pricing</span><span class="zh">服务价格</span></h2>
 
