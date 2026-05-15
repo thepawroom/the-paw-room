@@ -1,243 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Paw Room Pricing</title>
+
+<style>
+:root{
+  --black:#050505;
+  --white:#ffffff;
+  --grey:#9a9a9a;
+  --line:#2a2a2a;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--black);
+  color:var(--white);
+  line-height:1.7;
+}
+
+header{
+  padding:30px 8%;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.site-logo{
+  width:170px;
+  height:auto;
+  display:block;
+}
+
+.back-home{
+  text-decoration:none;
+  color:var(--grey);
+  text-transform:uppercase;
+  font-size:13px;
+  letter-spacing:1px;
+}
+
+.back-home:hover{
+  color:var(--white);
+}
+
+main{
+  padding:80px 8%;
+  max-width:1200px;
+  margin:auto;
+}
+
+h1{
+  font-size:56px;
+  margin-bottom:20px;
+  font-weight:500;
+}
+
+.intro{
+  color:var(--grey);
+  margin-bottom:60px;
+  max-width:700px;
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.card{
+  border:1px solid var(--line);
+  padding:35px;
+  background:#0b0b0b;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  color:var(--grey);
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.card h2{
+  font-size:32px;
+  margin-bottom:10px;
+  font-weight:500;
+}
+
+.card p{
+  color:var(--grey);
+  margin-bottom:25px;
+}
+
+.price-table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.price-table th,
+.price-table td{
+  padding:14px 0;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+}
+
+.price-table td:last-child,
+.price-table th:last-child{
+  text-align:right;
+}
+
+.policy{
+  margin-top:25px;
+  padding:20px;
+  border:1px solid var(--line);
+  background:#101010;
+  color:#d8d2c8;
+  font-size:14px;
+}
+
+.policy strong{
+  color:white;
+}
+
+footer{
+  padding:40px 8%;
+  border-top:1px solid var(--line);
+  color:var(--grey);
+  font-size:13px;
+  text-align:center;
+  margin-top:80px;
+}
+
+@media(max-width:900px){
+
+  h1{
+    font-size:42px;
+  }
+
+  .pricing-grid{
+    grid-template-columns:1fr;
+  }
+
+  header{
+    flex-direction:column;
+    gap:20px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
+
+<a href="index.html" class="back-home">
+← Back to Home
+</a>
+
+</header>
+
 <main>
 
-<section class="pricing" id="pricing">
-  <div class="section-head">
-    <h2>
-      <span class="en">Pricing</span>
-      <span class="zh">服务价格</span>
-    </h2>
+<h1>Pricing 服务价格</h1>
 
-    <p>
-      <span class="en">
-        Pricing is based on pet weight, size and care requirements.
-      </span>
+<p class="intro">
+Pricing is based on pet weight, size and care requirements.
+价格会根据狗狗体重、体型与照顾需求安排。
+</p>
 
-      <span class="zh">
-        价格会根据狗狗体重、体型与照顾需求安排。
-      </span>
-    </p>
-  </div>
+<div class="pricing-grid">
 
-  <div class="pricing-layout">
+<div class="card">
 
-    <div class="pricing-card">
-      <span class="tag">
-        <span class="en">Pet Boarding</span>
-        <span class="zh">宠物寄养</span>
-      </span>
+<div class="tag">
+Pet Boarding 宠物寄养
+</div>
 
-      <div class="price-lead">
-        <span class="en">From RM50 / night</span>
-        <span class="zh">RM50 / 晚起</span>
+<h2>From RM50 / night</h2>
 
-        <span>
-          <span class="en">Pet boarding by weight</span>
-          <span class="zh">寄养按体重计算</span>
-        </span>
-      </div>
+<p>
+Boarding pricing is based on your pet’s weight to ensure fair space,
+care and cleaning arrangement.
+</p>
 
-      <p>
-        <span class="en">
-          Boarding pricing is based on your pet’s weight to ensure fair space,
-          care and cleaning arrangement.
-        </span>
+<table class="price-table">
 
-        <span class="zh">
-          寄养价格按狗狗体重计算，以公平安排空间、照顾时间与清洁工作。
-        </span>
-      </p>
+<thead>
+<tr>
+<th>Pet Weight</th>
+<th>Rate / Night</th>
+</tr>
+</thead>
 
-      <div class="boarding-policy">
-        <strong>
-          <span class="en">Boarding Check-Out Policy</span>
-          <span class="zh">寄养 Check-Out 说明</span>
-        </strong>
+<tbody>
+<tr>
+<td>1–4kg</td>
+<td>RM50</td>
+</tr>
 
-        <br><br>
+<tr>
+<td>5–9kg</td>
+<td>RM55</td>
+</tr>
 
-        <span class="en">
-          Check-out time for pet boarding is before <strong>12:00 PM</strong>.
+<tr>
+<td>10–14kg</td>
+<td>RM60</td>
+</tr>
 
-          <br><br>
+<tr>
+<td>15–24kg</td>
+<td>RM65–RM70</td>
+</tr>
 
-          Late check-out between 12:00 PM and 5:00 PM will be charged at
-          <strong>RM10 per hour</strong>.
+<tr>
+<td>25–34kg</td>
+<td>RM75–RM80</td>
+</tr>
 
-          <br><br>
+<tr>
+<td>35–44kg</td>
+<td>RM85–RM90</td>
+</tr>
 
-          Check-out after 5:00 PM may be charged as a full daycare session
-          or additional boarding day.
-        </span>
+</tbody>
 
-        <span class="zh">
-          寄养 check-out 时间为中午 <strong>12:00 前</strong>。
+</table>
 
-          <br><br>
+<div class="policy">
 
-          中午 12:00 PM 至下午 5:00 PM 之间 check-out，
-          将额外收取 <strong>每小时 RM10</strong> 的费用。
+<strong>Boarding Check-Out Policy</strong>
 
-          <br><br>
+<br><br>
 
-          下午 5:00 PM 后 check-out，
-          可能会按完整日托或额外一天寄养费用计算。
-        </span>
-      </div>
+Check-out before 12:00 PM.
 
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th>
-              <span class="en">Pet Weight</span>
-              <span class="zh">狗狗体重</span>
-            </th>
+<br><br>
 
-            <th>
-              <span class="en">Rate / Night</span>
-              <span class="zh">每晚价格</span>
-            </th>
-          </tr>
-        </thead>
+12PM–5PM:
+RM10 per hour late fee.
 
-        <tbody>
-          <tr><td>1–4kg</td><td>RM50</td></tr>
-          <tr><td>5–9kg</td><td>RM55</td></tr>
-          <tr><td>10–14kg</td><td>RM60</td></tr>
-          <tr><td>15–24kg</td><td>RM65–RM70</td></tr>
-          <tr><td>25–34kg</td><td>RM75–RM80</td></tr>
-          <tr><td>35–44kg</td><td>RM85–RM90</td></tr>
-        </tbody>
-      </table>
-    </div>
+<br><br>
 
-    <div class="pricing-card">
-      <span class="tag">
-        <span class="en">Pet Daycare</span>
-        <span class="zh">宠物日托</span>
-      </span>
+After 5PM:
+May count as full daycare or additional boarding day.
 
-      <div class="price-lead">
-        <span class="en">From RM5 / hour</span>
-        <span class="zh">RM5 / 小时起</span>
+</div>
 
-        <span>
-          <span class="en">Hourly daycare by weight</span>
-          <span class="zh">日托按体重与小时计算</span>
-        </span>
-      </div>
+</div>
 
-      <p>
-        <span class="en">
-          Daycare is charged hourly and based on your pet’s weight.
-        </span>
+<div class="card">
 
-        <span class="zh">
-          日托按小时收费，价格根据狗狗体重计算。
-        </span>
-      </p>
+<div class="tag">
+Pet Daycare 宠物日托
+</div>
 
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th>
-              <span class="en">Pet Weight</span>
-              <span class="zh">狗狗体重</span>
-            </th>
+<h2>From RM5 / hour</h2>
 
-            <th>
-              <span class="en">Rate / Hour</span>
-              <span class="zh">每小时价格</span>
-            </th>
-          </tr>
-        </thead>
+<p>
+Daycare is charged hourly and based on your pet’s weight.
+</p>
 
-        <tbody>
-          <tr><td>1–9kg</td><td>RM5 / hour</td></tr>
-          <tr><td>10–19kg</td><td>RM7 / hour</td></tr>
-        </tbody>
-      </table>
+<table class="price-table">
 
-      <p style="margin-top:22px;">
-        <span class="en">
-          Check-in starts from 9:30am. Latest check-out time is 8:00pm.
-          Daycare is capped at 9 hours.
-        </span>
+<thead>
+<tr>
+<th>Pet Weight</th>
+<th>Rate / Hour</th>
+</tr>
+</thead>
 
-        <span class="zh">
-          日托 check-in 时间为早上 9:30 起，最迟 check-out 时间为晚上 8:00。
-          日托最多 9 小时。
-        </span>
-      </p>
+<tbody>
 
-      <p>
-        <span class="en">
-          Any stay above 9 hours will be charged as Pet Boarding / daily rate.
-        </span>
+<tr>
+<td>1–9kg</td>
+<td>RM5 / hour</td>
+</tr>
 
-        <span class="zh">
-          超过 9 小时将按宠物寄养 / 每日费用计算。
-        </span>
-      </p>
-    </div>
+<tr>
+<td>10–19kg</td>
+<td>RM7 / hour</td>
+</tr>
 
-    <div class="pricing-note">
-      <span class="tag">
-        <span class="en">Important Note</span>
-        <span class="zh">重要说明</span>
-      </span>
+</tbody>
 
-      <h3>
-        <span class="en">Limited large-room availability</span>
-        <span class="zh">大型犬房间名额有限</span>
-      </h3>
+</table>
 
-      <p>
-        <span class="en">
-          Pets above 15kg require availability confirmation before booking is accepted,
-          as limited large-room space is available.
-        </span>
+<div class="policy">
 
-        <span class="zh">
-          15kg 以上狗狗因需使用较大空间，名额有限。
-        </span>
-      </p>
-    </div>
+<strong>Daycare Policy</strong>
 
-    <div class="pricing-note">
-      <span class="tag">
-        <span class="en">Deposit Policy</span>
-        <span class="zh">定金说明</span>
-      </span>
+<br><br>
 
-      <h3>
-        <span class="en">Boarding deposit only</span>
-        <span class="zh">仅寄养需要定金</span>
-      </h3>
+Check-in starts from 9:30AM.
 
-      <p>
-        <span class="en">
-          Pet Boarding requires a RM50 deposit to reserve the slot.
-          If the boarding booking is cancelled, the deposit is non-refundable.
-        </span>
+<br><br>
 
-        <span class="zh">
-          宠物寄养需要支付 RM50 定金以保留位置。
-        </span>
-      </p>
+Latest check-out:
+8:00PM
 
-      <p>
-        <span class="en">
-          Full payment is required upon check-in.
-          Daycare and Grooming do not require deposit.
-        </span>
+<br><br>
 
-        <span class="zh">
-          Check-in 时需支付全额费用。
-        </span>
-      </p>
-    </div>
+Daycare capped at 9 hours.
 
-  </div>
-</section>
+<br><br>
+
+Above 9 hours:
+Charged as boarding rate.
+
+</div>
+
+</div>
+
+</div>
 
 </main>
+
+<footer>
+The Paw Room · Pet Boarding · Daycare · Grooming · Bandar Kinrara, Puchong
+</footer>
+
+</body>
+</html>
