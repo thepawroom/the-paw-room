@@ -92,6 +92,17 @@
 
     nav a:hover { color: var(--white); }
 
+    .menu-toggle{
+  display:none;
+  background:transparent;
+  color:var(--white);
+  border:1px solid var(--line);
+  padding:12px 16px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:12px;
+}
+    
     .language-switch {
       display: flex;
       gap: 8px;
@@ -544,6 +555,75 @@
     }
 
     @media (max-width: 900px) {
+     header{
+  padding:18px 8%;
+  align-items:center;
+}
+
+.site-logo{
+  width:115px;
+  margin-left:0;
+}
+
+.menu-toggle{
+  display:block;
+}
+
+nav{
+  display:none;
+  width:100%;
+  padding-top:18px;
+}
+
+nav.is-open{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+
+nav a{
+  border:1px solid var(--line);
+  padding:14px 12px;
+  text-align:center;
+}
+
+.language-switch{
+  justify-content:center;
+  margin-top:8px;
+}
+
+.hero{
+  min-height:auto;
+  padding:34px 8% 54px;
+  display:flex;
+  flex-direction:column-reverse;
+  gap:28px;
+}
+
+.hero-image{
+  height:330px;
+}
+
+h1{
+  font-size:38px;
+  line-height:1.02;
+}
+
+.hero p{
+  font-size:16px;
+}
+
+.whatsapp-float{
+  right:16px;
+  bottom:16px;
+  padding:12px 14px;
+  font-size:0;
+}
+
+.whatsapp-float::before{
+  content:"WhatsApp";
+  font-size:13px;
+}
       header{
   padding: 18px 8%;
   display: block;
@@ -642,26 +722,29 @@ h1{
 </head>
 
 <body data-lang="en">
-  <header>
-    <div class="brand-text">
- <img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
-</div>
-    <nav>
-      <a href="#services"><span class="en">Services</span><span class="zh">服务项目</span></a>
-      <a href="#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
-      <a href="pricing.html"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
-      <a href="#booking"><span class="en">Booking</span><span class="zh">预约</span></a>
-      <a href="#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
-      <a href="faq.html">FAQ</a>
-      <a href="#instagram">Instagram</a>
-      <a href="contact.html"><span class="en">Contact</span><span class="zh">联系</span></a>
+ <header>
+  <div class="brand-text">
+    <img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
+  </div>
 
-      <div class="language-switch" aria-label="Language switcher">
-        <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
-        <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
-      </div>
-    </nav>
-  </header>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+
+  <nav id="mainNav">
+    <a href="#services"><span class="en">Services</span><span class="zh">服务项目</span></a>
+    <a href="#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
+    <a href="pricing.html"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
+    <a href="#booking"><span class="en">Booking</span><span class="zh">预约</span></a>
+    <a href="#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
+    <a href="faq.html">FAQ</a>
+    <a href="#instagram">Instagram</a>
+    <a href="contact.html"><span class="en">Contact</span><span class="zh">联系</span></a>
+
+    <div class="language-switch" aria-label="Language switcher">
+      <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
+      <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
+    </div>
+  </nav>
+</header>
 
   <main>
     <section class="hero">
@@ -1049,19 +1132,23 @@ h1{
 <div>© 2026 The Paw Room. All rights reserved.</div>
 </footer>
 
-  <script>
-    function setLanguage(lang) {
-      document.body.setAttribute('data-lang', lang);
-      document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : 'en');
-      localStorage.setItem('pawRoomLanguage', lang);
-    }
+ <script>
+  function setLanguage(lang) {
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : 'en');
+    localStorage.setItem('pawRoomLanguage', lang);
+  }
 
-    const savedLanguage = localStorage.getItem('pawRoomLanguage');
+  function toggleMenu() {
+    document.getElementById('mainNav').classList.toggle('is-open');
+  }
 
-    if (savedLanguage === 'zh' || savedLanguage === 'en') {
-      setLanguage(savedLanguage);
-    }
-  </script>
+  const savedLanguage = localStorage.getItem('pawRoomLanguage');
+
+  if (savedLanguage === 'zh' || savedLanguage === 'en') {
+    setLanguage(savedLanguage);
+  }
+</script>
   <a
   class="whatsapp-float"
   href="https://wa.me/60163522880?text=Hi%20The%20Paw%20Room%20👋%20I%20would%20like%20to%20enquire%20about%20pet%20boarding%20or%20daycare."
