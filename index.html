@@ -554,208 +554,167 @@
       text-transform: uppercase;
     }
 
-    @media (max-width: 900px) {
-    header{
-  padding:18px 6%;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:10px;
+  @media (max-width: 900px) {
+  header{
+    padding:16px 6%;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:10px;
+  }
+
+  .site-logo{
+    width:82px;
+    margin:0 auto;
+  }
+
+  .menu-toggle{
+    display:block;
+    padding:10px 12px;
+    font-size:11px;
+  }
+
+  .mobile-language{
+    display:flex;
+    justify-content:flex-end;
+    gap:5px;
+    margin:0;
+  }
+
+  .mobile-language button{
+    padding:8px 9px;
+    font-size:10px;
+  }
+
+  nav{
+    display:none;
+    grid-column:1 / -1;
+    width:100%;
+    padding-top:14px;
+  }
+
+  nav.is-open{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  nav a{
+    border:1px solid var(--line);
+    padding:14px 12px;
+    text-align:center;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:26px 8% 50px;
+    display:flex;
+    flex-direction:column-reverse;
+    gap:24px;
+  }
+
+  .hero-image{
+    height:auto;
+    border-radius:18px;
+    border:1px solid var(--line);
+    overflow:hidden;
+  }
+
+  .hero-image img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+  }
+
+  h1{
+    font-size:36px;
+    line-height:1.02;
+    letter-spacing:-1px;
+  }
+
+  .hero p{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .actions{
+    display:grid;
+    gap:12px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .hero,
+  .photo-grid,
+  .pricing-layout,
+  .booking-layout,
+  .terms-grid,
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .service-grid,
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-head p{
+    margin-top:18px;
+  }
+
+  .photo-large,
+  .photo-small,
+  .gallery-item{
+    height:320px;
+  }
+
+  .whatsapp-float{
+    right:16px;
+    bottom:16px;
+    padding:12px 14px;
+    font-size:0;
+  }
+
+  .whatsapp-float::before{
+    content:"WhatsApp";
+    font-size:13px;
+  }
 }
-
-.site-logo{
-  width:90px;
-  margin:0 auto;
-}
-
-.mobile-language{
-  display:flex;
-  justify-content:flex-end;
-  gap:6px;
-}
-
-.mobile-language button{
-  padding:8px 10px;
-  font-size:10px;
-}      
-      
-.menu-toggle{
-  display:block;
-}
-
-nav{
-  display:none;
-  width:100%;
-  padding-top:18px;
-}
-
-nav.is-open{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
-}
-
-nav a{
-  border:1px solid var(--line);
-  padding:14px 12px;
-  text-align:center;
-}
-
-.language-switch{
-  justify-content:center;
-  margin-top:8px;
-}
-
-.hero{
-  min-height:auto;
-  padding:28px 8% 54px;
-  display:flex;
-  flex-direction:column-reverse;
-  gap:26px;
-}
-
-.hero-image{
-  height:360px;
-  border-radius:18px;
-  border:1px solid var(--line);
-}
-
-h1{
-  font-size:38px;
-  line-height:1.02;
-}
-
-.hero p{
-  font-size:16px;
-}
-
-.whatsapp-float{
-  right:16px;
-  bottom:16px;
-  padding:12px 14px;
-  font-size:0;
-}
-
-.whatsapp-float::before{
-  content:"WhatsApp";
-  font-size:13px;
-}
-      header{
-  padding: 18px 8%;
-  display: block;
-}
-
-.site-logo{
-  width: 120px;
-  margin: 0 auto 18px;
-}
-
-.language-switch{
-  justify-content: center;
-}
-
-.hero{
-  min-height: auto;
-  padding: 54px 8%;
-  gap: 34px;
-}
-
-h1{
-  font-size: 42px;
-  line-height: 1.02;
-  letter-spacing: -1px;
-}
-
-.hero p{
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-.actions{
-  display: grid;
-  gap: 12px;
-}
-
-.btn{
-  text-align: center;
-  width: 100%;
-}
-
-.whatsapp-float{
-  right: 16px;
-  bottom: 16px;
-  padding: 12px 14px;
-  font-size: 0;
-}
-
-.whatsapp-float::before{
-  content: "WhatsApp";
-  font-size: 13px;
-}
-      header {
-        align-items: flex-start;
-        gap: 18px;
-        flex-wrap: wrap;
-      }
-
-      nav {
-        width: 100%;
-        gap: 18px;
-      }
-
-      .language-switch {
-        width: 100%;
-        margin-left: 0;
-      }
-
-      .hero,
-      .photo-grid,
-      .pricing-layout,
-      .booking-layout,
-      .terms-grid,
-      .contact {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-image { height: 360px; }
-
-      .service-grid,
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head { display: block; }
-
-      .section-head p { margin-top: 18px; }
-
-      .photo-large,
-      .photo-small,
-      .gallery-item {
-        height: 320px;
-      }
-    }
   </style>
 </head>
 
 <body data-lang="en">
 <header>
 
-<button class="menu-toggle" onclick="toggleMenu()">
-☰ Menu
-</button>
+<header>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
 
-<div class="brand-text">
-  <img src="images/logo-white.png"
-       alt="The Paw Room Logo"
-       class="site-logo">
-</div>
+  <div class="brand-text">
+    <img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
+  </div>
 
-<nav id="mainNav">
+  <div class="language-switch mobile-language" aria-label="Language switcher">
+    <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
+    <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
+  </div>
 
-  你的全部 menu 保持原样
-
-</nav>
-
+  <nav id="mainNav">
+    <a href="#services"><span class="en">Services</span><span class="zh">服务项目</span></a>
+    <a href="#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
+    <a href="pricing.html"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
+    <a href="#booking"><span class="en">Booking</span><span class="zh">预约</span></a>
+    <a href="#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
+    <a href="faq.html">FAQ</a>
+    <a href="#instagram">Instagram</a>
+    <a href="contact.html"><span class="en">Contact</span><span class="zh">联系</span></a>
+  </nav>
 </header>
 
   <main>
