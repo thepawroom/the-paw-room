@@ -555,13 +555,15 @@
     }
 
   @media (max-width: 900px) {
-  header{
-    padding:16px 6%;
-    display:grid;
-    grid-template-columns:auto 1fr auto;
-    align-items:center;
-    gap:10px;
-  }
+ header{
+  padding:16px 6%;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:10px;
+  position:relative;
+  top:auto;
+}
 
   .site-logo{
     width:82px;
@@ -605,13 +607,13 @@
     text-align:center;
   }
 
-  .hero{
-    min-height:auto;
-    padding:26px 8% 50px;
-    display:flex;
-    flex-direction:column-reverse;
-    gap:24px;
-  }
+ .hero{
+  min-height:auto;
+  padding:32px 8% 50px;
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
 
   .hero-image{
     height:auto;
