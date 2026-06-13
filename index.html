@@ -555,16 +555,30 @@
     }
 
     @media (max-width: 900px) {
-     header{
-  padding:18px 8%;
+    header{
+  padding:18px 6%;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
   align-items:center;
+  gap:10px;
 }
 
 .site-logo{
-  width:115px;
-  margin-left:0;
+  width:90px;
+  margin:0 auto;
 }
 
+.mobile-language{
+  display:flex;
+  justify-content:flex-end;
+  gap:6px;
+}
+
+.mobile-language button{
+  padding:8px 10px;
+  font-size:10px;
+}      
+      
 .menu-toggle{
   display:block;
 }
@@ -724,28 +738,24 @@ h1{
 </head>
 
 <body data-lang="en">
- <header>
-  <div class="brand-text">
-    <img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
-  </div>
+<header>
 
-  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+<button class="menu-toggle" onclick="toggleMenu()">
+☰ Menu
+</button>
 
-  <nav id="mainNav">
-    <a href="#services"><span class="en">Services</span><span class="zh">服务项目</span></a>
-    <a href="#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
-    <a href="pricing.html"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
-    <a href="#booking"><span class="en">Booking</span><span class="zh">预约</span></a>
-    <a href="#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
-    <a href="faq.html">FAQ</a>
-    <a href="#instagram">Instagram</a>
-    <a href="contact.html"><span class="en">Contact</span><span class="zh">联系</span></a>
+<div class="brand-text">
+  <img src="images/logo-white.png"
+       alt="The Paw Room Logo"
+       class="site-logo">
+</div>
 
-    <div class="language-switch" aria-label="Language switcher">
-      <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
-      <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
-    </div>
-  </nav>
+<nav id="mainNav">
+
+  你的全部 menu 保持原样
+
+</nav>
+
 </header>
 
   <main>
