@@ -173,12 +173,18 @@
       margin-bottom: 34px;
     }
 
-    .hero-image {
-      height: 560px;
-      border: 1px solid var(--line);
-      overflow: hidden;
-      background: #111;
-    }
+   .hero-image {
+  height:auto;
+  border:1px solid var(--line);
+  overflow:hidden;
+  background:#111;
+}
+
+    .hero-image img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
 
     .actions {
       display: flex;
@@ -706,11 +712,6 @@
     <img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
   </div>
 
-  <div class="language-switch mobile-language" aria-label="Language switcher">
-    <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
-    <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
-  </div>
-
   <nav id="mainNav">
     <a href="#services"><span class="en">Services</span><span class="zh">服务项目</span></a>
     <a href="#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
@@ -721,6 +722,11 @@
     <a href="#instagram">Instagram</a>
     <a href="contact.html"><span class="en">Contact</span><span class="zh">联系</span></a>
   </nav>
+
+  <div class="language-switch mobile-language" aria-label="Language switcher">
+    <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
+    <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
+  </div>
 </header>
 
   <main>
