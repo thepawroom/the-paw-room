@@ -176,7 +176,7 @@ footer{
   line-height:1.8;
 }
 
-@m@media(max-width:900px){
+@media(max-width:900px){
 
   header{
     display:grid;
@@ -203,6 +203,7 @@ footer{
     grid-column:1 / -1;
     width:100%;
     padding-top:14px;
+    margin-left:0;
   }
 
   nav.is-open{
@@ -217,12 +218,43 @@ footer{
     text-align:center;
   }
 
+  main{
+    padding:50px 6%;
+  }
+
+  .hero{
+    margin-bottom:40px;
+  }
+
   .hero h1{
-    font-size:42px;
+    font-size:38px;
+    line-height:1.05;
+  }
+
+  .hero p{
+    font-size:16px;
   }
 
   .contact-grid{
     grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:26px;
+  }
+
+  .actions{
+    display:grid;
+    gap:12px;
+  }
+
+  .btn{
+    width:100%;
+    text-align:center;
+  }
+
+  .map-box iframe{
+    height:320px;
   }
 
 }
