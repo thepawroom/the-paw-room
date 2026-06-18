@@ -870,7 +870,7 @@
         </div>
       </div>
 
-  <div class="hero-image hero-slider">
+ <div class="hero-image hero-slider">
   <img class="hero-slide active" src="images/dog-hero-3.jpg" alt="Pet boarding guest at The Paw Room">
   <img class="hero-slide" src="images/dog-hero-4.jpg" alt="Cozy pet boarding guest at The Paw Room">
   <img class="hero-slide" src="images/dog-hero-22.jpg" alt="Pet boarding space at The Paw Room">
@@ -1261,7 +1261,7 @@
 <div>© 2026 The Paw Room. All rights reserved.</div>
 </footer>
 
- <script>
+<script>
   function setLanguage(lang) {
     document.body.setAttribute('data-lang', lang);
     document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : 'en');
@@ -1272,12 +1272,28 @@
     document.getElementById('mainNav').classList.toggle('is-open');
   }
 
+  document.addEventListener('DOMContentLoaded', function () {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+
+    if (slides.length > 1) {
+      setInterval(function () {
+        slides[currentSlide].classList.remove('active');
+
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        slides[currentSlide].classList.add('active');
+      }, 4000);
+    }
+  });
+
   const savedLanguage = localStorage.getItem('pawRoomLanguage');
 
   if (savedLanguage === 'zh' || savedLanguage === 'en') {
     setLanguage(savedLanguage);
   }
 </script>
+  
   <a
   class="whatsapp-float"
   href="https://wa.me/60163522880?text=Hi%20The%20Paw%20Room%20👋%20I%20would%20like%20to%20enquire%20about%20pet%20boarding%20or%20daycare."
