@@ -204,25 +204,32 @@
 
 /* Hero Slider */
 
+/* Hero Slider */
+
 .hero-slider{
   position:relative;
-  height:560px;
+  aspect-ratio:1 / 1;
   border:1px solid var(--line);
   overflow:hidden;
   background:#111;
 }
 
-.hero-slider img{
+.hero-slide{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
   opacity:0;
-  transform:scale(1);
-  animation:heroFadeZoom 25s infinite;
+  transform:scale(1.04);
+  transition:opacity 0.9s ease, transform 1.2s ease;
 }
 
+.hero-slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+    
 .hero-slider img:nth-child(1){ animation-delay:0s; }
 .hero-slider img:nth-child(2){ animation-delay:5s; }
 .hero-slider img:nth-child(3){ animation-delay:10s; }
@@ -864,11 +871,11 @@
       </div>
 
   <div class="hero-image hero-slider">
-  <img src="images/dog-hero-3.jpg" alt="Pet boarding guest at The Paw Room">
-  <img src="images/dog-hero-4.jpg" alt="Cozy pet boarding guest at The Paw Room">
-  <img src="images/dog-hero-22.jpg" alt="Pet boarding space at The Paw Room">
-  <img src="images/dog-hero-12.jpg" alt="Small dog guest at The Paw Room">
-  <img src="images/dog-hero-1.jpg" alt="Dog guest playing at The Paw Room">
+  <img class="hero-slide active" src="images/dog-hero-3.jpg" alt="Pet boarding guest at The Paw Room">
+  <img class="hero-slide" src="images/dog-hero-4.jpg" alt="Cozy pet boarding guest at The Paw Room">
+  <img class="hero-slide" src="images/dog-hero-22.jpg" alt="Pet boarding space at The Paw Room">
+  <img class="hero-slide" src="images/dog-hero-12.jpg" alt="Small dog guest at The Paw Room">
+  <img class="hero-slide" src="images/dog-hero-1.jpg" alt="Dog guest playing at The Paw Room">
 </div>
     </section>
 
