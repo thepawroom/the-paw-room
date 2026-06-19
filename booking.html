@@ -11,6 +11,71 @@
 body[data-lang="en"] .zh { display: none !important; }
 body[data-lang="zh"] .en { display: none !important; }
 
+header{
+  width:100%;
+  padding:10px 5%;
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid #2a2a2a;
+  background:rgba(5,5,5,0.96);
+}
+
+.site-logo{
+  width:170px;
+  height:auto;
+  display:block;
+  margin-left:-20px;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  flex-wrap:wrap;
+  margin-left:50px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#9a9a9a;
+  font-size:13px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+nav a:hover,
+nav a.active{
+  color:#ffffff;
+}
+
+.menu-toggle{
+  display:none;
+  background:transparent;
+  color:#ffffff;
+  border:1px solid #2a2a2a;
+  padding:12px 16px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:12px;
+}
+
+.language-switch{
+  display:flex;
+  gap:8px;
+  margin-left:auto;
+}
+
+.language-switch button{
+  background:transparent;
+  color:#9a9a9a;
+  border:1px solid #2a2a2a;
+  padding:8px 10px;
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.section-head {
 .section-head {
   display: flex;
   justify-content: space-between;
@@ -154,7 +219,31 @@ main{
 
 <body data-lang="en">
 
-<main>
+<header>
+  <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+
+  <div class="brand-text">
+    <img src="images/logo-white.png" alt="The Paw Room Logo" class="site-logo">
+  </div>
+
+  <nav id="mainNav">
+    <a href="index.html"><span class="en">Home</span><span class="zh">主页</span></a>
+    <a href="index.html#space"><span class="en">Our Space</span><span class="zh">环境展示</span></a>
+    <a href="pricing.html"><span class="en">Pricing</span><span class="zh">服务价格</span></a>
+    <a href="booking.html" class="active"><span class="en">Booking</span><span class="zh">预约</span></a>
+    <a href="index.html#terms"><span class="en">Terms</span><span class="zh">条规</span></a>
+    <a href="faq.html">FAQ</a>
+    <a href="index.html#instagram">Instagram</a>
+    <a href="contact.html"><span class="en">Contact</span><span class="zh">联系</span></a>
+  </nav>
+
+  <div class="language-switch mobile-language" aria-label="Language switcher">
+    <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
+    <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
+  </div>
+</header>
+
+<main>>
 
 <section class="booking" id="booking">
   <div class="section-head">
