@@ -63,6 +63,32 @@ nav a.active{
   color:#ffffff;
 }
 
+.language-switch{
+  display:flex;
+  gap:8px;
+  margin-left:24px;
+  flex-shrink:0;
+}
+
+.language-switch button{
+  background:transparent;
+  color:#9a9a9a;
+  border:1px solid #2a2a2a;
+  padding:8px 10px;
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+.language-switch button:hover,
+body[data-lang="en"] .language-switch button[data-switch="en"],
+body[data-lang="zh"] .language-switch button[data-switch="zh"]{
+  color:#050505;
+  background:#ffffff;
+  border-color:#ffffff;
+}
+
 .menu-toggle{
   display:none;
   background:transparent;
@@ -227,6 +253,11 @@ main{
   <a href="contact.html">Contact</a>
 </nav>
 
+<div class="language-switch">
+  <button type="button" data-switch="en" onclick="setLanguage('en')">EN</button>
+  <button type="button" data-switch="zh" onclick="setLanguage('zh')">中文</button>
+</div>
+
 </header>
 
 <main>
@@ -362,6 +393,24 @@ main{
 </section>
 
 </main>
+
+<script>
+function setLanguage(lang){
+  document.body.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : 'en');
+  localStorage.setItem('pawRoomLanguage', lang);
+}
+
+function toggleMenu() {
+  document.getElementById('mainNav').classList.toggle('is-open');
+}
+
+const savedLanguage = localStorage.getItem('pawRoomLanguage');
+
+if(savedLanguage === 'zh' || savedLanguage === 'en'){
+  setLanguage(savedLanguage);
+}
+</script>
   
 </body>
 </html>
