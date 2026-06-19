@@ -8,10 +8,23 @@
 <meta name="description" content="Submit a booking request for pet boarding, daycare and grooming at The Paw Room in Bandar Kinrara, Puchong.">
 
 <style>
+
+  *{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  overflow-x:hidden;
+}
+  
 body[data-lang="en"] .zh { display: none !important; }
 body[data-lang="zh"] .en { display: none !important; }
 
 header{
+ 
   width:100%;
   padding:24px 8%;
   border-bottom:1px solid #2a2a2a;
@@ -34,6 +47,7 @@ nav{
   gap:28px;
   flex-wrap:wrap;
   justify-content:flex-end;
+  max-width:75%;
 }
 
 nav a{
@@ -71,14 +85,6 @@ nav a.active{
 .section-head p {
   color: #555;
   max-width: 520px;
-}
-
-.booking {
-  background:#f4f1ec;
-  color:#050505;
-  min-height:100vh;
-  padding:80px 8%;
-  overflow:hidden;
 }
 
 .booking-layout {
